@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aOq-Yt-oMS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aOq-Yt-oMS">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -217,7 +217,7 @@
         <!--SETTINGS-->
         <scene sceneID="w64-vv-q8I">
             <objects>
-                <viewController wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="Bvz-PD-Fen" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="Bvz-PD-Fen" customClass="PreGameSettingsViewController" customModule="Q_Hoot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uC4-yd-ts4">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -286,10 +286,16 @@
                     <navigationItem key="navigationItem" title="SETTINGS" largeTitleDisplayMode="always" id="tAr-wD-KCm">
                         <barButtonItem key="rightBarButtonItem" title="NEXT" id="QHS-D5-Bhw">
                             <connections>
-                                <segue destination="LW1-7o-RwC" kind="show" id="BP1-zY-9oS"/>
+                                <action selector="nextButtonPushed:" destination="Bvz-PD-Fen" id="uhX-me-cvP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="categoryPicker" destination="4lp-u1-849" id="ZQI-Tb-WhB"/>
+                        <outlet property="numberOfTeamsPicker" destination="cxN-Vh-bjJ" id="1DL-st-Uq6"/>
+                        <outlet property="timeLimitPicker" destination="xCL-E6-6UB" id="b6y-0w-T83"/>
+                        <segue destination="LW1-7o-RwC" kind="show" identifier="startGame" id="0I4-7G-4hs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gA6-UT-z4d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -298,7 +304,7 @@
         <!--GAME-->
         <scene sceneID="rv7-f7-ogU">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="LW1-7o-RwC" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="LW1-7o-RwC" customClass="GameViewController" customModule="Q_Hoot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4jH-A1-R9B">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

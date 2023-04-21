@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C995CEA29F1818900E01E44 /* PreGameSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C995CE929F1818900E01E44 /* PreGameSettingsViewController.swift */; };
+		2C995CEC29F2D2F000E01E44 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C995CEB29F2D2EF00E01E44 /* GameViewController.swift */; };
 		3EB492D429ED9617008A1398 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB492D329ED9617008A1398 /* AppDelegate.swift */; };
 		3EB492D629ED9617008A1398 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB492D529ED9617008A1398 /* SceneDelegate.swift */; };
 		3EB492D829ED9617008A1398 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB492D729ED9617008A1398 /* ViewController.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C995CE929F1818900E01E44 /* PreGameSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreGameSettingsViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		2C995CEB29F2D2EF00E01E44 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		3EB492D029ED9617008A1398 /* Q'Hoot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Q'Hoot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EB492D329ED9617008A1398 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EB492D529ED9617008A1398 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 				3EB492D729ED9617008A1398 /* ViewController.swift */,
 				C2C6F61729EDA89E00A985C3 /* PlayViewController.swift */,
 				C2C6F61529EDA87000A985C3 /* SettingsViewController.swift */,
+				2C995CE929F1818900E01E44 /* PreGameSettingsViewController.swift */,
+				2C995CEB29F2D2EF00E01E44 /* GameViewController.swift */,
 				3EB492D929ED9617008A1398 /* Main.storyboard */,
 				3EB492DC29ED9618008A1398 /* Assets.xcassets */,
 				3EB492DE29ED9618008A1398 /* LaunchScreen.storyboard */,
@@ -152,9 +158,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C995CEC29F2D2F000E01E44 /* GameViewController.swift in Sources */,
 				3EB492D829ED9617008A1398 /* ViewController.swift in Sources */,
 				C2C6F61829EDA89E00A985C3 /* PlayViewController.swift in Sources */,
 				3EB492D429ED9617008A1398 /* AppDelegate.swift in Sources */,
+				2C995CEA29F1818900E01E44 /* PreGameSettingsViewController.swift in Sources */,
 				3EB492D629ED9617008A1398 /* SceneDelegate.swift in Sources */,
 				C2C6F61629EDA87000A985C3 /* SettingsViewController.swift in Sources */,
 			);
