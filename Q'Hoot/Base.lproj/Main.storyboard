@@ -393,6 +393,44 @@
             </objects>
             <point key="canvasLocation" x="3454" y="-572"/>
         </scene>
+        <!--Results View Controller-->
+        <scene sceneID="JbE-lj-q0T">
+            <objects>
+                <viewController id="xob-TS-ENB" customClass="ResultsViewController" customModule="Q_Hoot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pdk-8N-g56">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat resposne" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Px-Fh-siT">
+                                <rect key="frame" x="97" y="137" width="196" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemPinkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fd-hG-VjN">
+                                <rect key="frame" x="158" y="295.33333333333331" width="75" height="159.66666666666669"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fYj-8v-Tg0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0fd-hG-VjN" firstAttribute="top" secondItem="0Px-Fh-siT" secondAttribute="bottom" constant="138" id="762-FO-bQf"/>
+                            <constraint firstItem="0Px-Fh-siT" firstAttribute="leading" secondItem="fYj-8v-Tg0" secondAttribute="leading" constant="97" id="8Nb-cl-thb"/>
+                            <constraint firstItem="fYj-8v-Tg0" firstAttribute="bottom" secondItem="0fd-hG-VjN" secondAttribute="bottom" constant="355" id="J3c-FJ-4iY"/>
+                            <constraint firstItem="0Px-Fh-siT" firstAttribute="top" secondItem="fYj-8v-Tg0" secondAttribute="top" constant="90" id="diH-89-fwa"/>
+                            <constraint firstItem="fYj-8v-Tg0" firstAttribute="trailing" secondItem="0Px-Fh-siT" secondAttribute="trailing" constant="97" id="g6O-zh-e4G"/>
+                            <constraint firstItem="fYj-8v-Tg0" firstAttribute="trailing" secondItem="0fd-hG-VjN" secondAttribute="trailing" constant="157" id="iwl-r4-dr9"/>
+                            <constraint firstItem="0fd-hG-VjN" firstAttribute="leading" secondItem="fYj-8v-Tg0" secondAttribute="leading" constant="158" id="nac-MR-QyN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="MQZ-or-gKM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7sD-nP-YgG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4300" y="-572.2748815165877"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="bZe-to-EXs">
             <objects>
@@ -422,6 +460,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
