@@ -8,7 +8,6 @@
 import UIKit
 
 class PlayViewController: UIViewController {
-
     
     
     
@@ -29,5 +28,12 @@ class PlayViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard segue.identifier == "startGame" else {return}
+//            let vc = segue.destination as! PreGameSettingsViewController
+//        vc.delegate = self
+//        }
+    
 }
+
+

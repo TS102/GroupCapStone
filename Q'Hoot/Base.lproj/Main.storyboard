@@ -188,7 +188,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="PLAY GAME"/>
                                 <connections>
-                                    <segue destination="hrw-3o-Dc3" kind="show" id="vlv-Ej-3C2"/>
+                                    <segue destination="hrw-3o-Dc3" kind="show" identifier="playGame" id="vlv-Ej-3C2"/>
                                 </connections>
                             </button>
                         </subviews>
