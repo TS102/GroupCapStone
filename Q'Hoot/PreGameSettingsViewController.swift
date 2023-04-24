@@ -8,8 +8,12 @@
 import UIKit
 
 class PreGameSettingsViewController:UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-  
-    
+    func passGameSettrings(teams: Int, timeLimit: Int, Category: String) {
+        //
+    }
+    var teamSelected: String = ""
+    var timeLimitSelected: String = ""
+    var catergorySelected: String = ""
     let teamPickerData = ["1", "2", "3"]
     let timeLimitData = ["30","60", "90"]
     let categoryData = ["Colors", "Plants", "Food", "Trees"]
@@ -65,11 +69,31 @@ class PreGameSettingsViewController:UIViewController, UIPickerViewDelegate, UIPi
             return categoryData[row]
         } else {return nil}
           }
-    
-    @IBAction func nextButtonPushed(_ sender: Any) {
-     
-        performSegue(withIdentifier: "startGame", sender: Any?.self)
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == numberOfTeamsPicker {
+            teamSelected = teamPickerData[row]
+            print(teamSelected)
+        }
+        else if pickerView == timeLimitPicker {
+            timeLimitSelected = timeLimitData[row]
+            print(timeLimitSelected)
+        }
+        else if pickerView == categoryPicker{
+            catergorySelected = categoryData[row]
+            print(catergorySelected)
+        }
     }
-    
+    @IBAction func nextButtonPushed(_ sender: Any) {
+        performSegue(withIdentifier: "startGame", sender: Any?.self)
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "startGame" else {return}
+            let vc = segue.destination as! GameViewController
+                vc.teamPickerData = teamSelected
+                vc.timeLimitData = timeLimitSelected
+                vc.categoryData = catergorySelected
+    }
+   
 }
 
