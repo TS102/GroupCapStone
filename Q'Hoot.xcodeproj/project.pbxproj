@@ -15,6 +15,7 @@
 		3EB492DB29ED9617008A1398 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EB492D929ED9617008A1398 /* Main.storyboard */; };
 		3EB492DD29ED9618008A1398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EB492DC29ED9618008A1398 /* Assets.xcassets */; };
 		3EB492E029ED9618008A1398 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EB492DE29ED9618008A1398 /* LaunchScreen.storyboard */; };
+		3EB5DF6629F6D2E300854678 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5DF6529F6D2E300854678 /* ResultsViewController.swift */; };
 		3EB8392E29ED974E006285B9 /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3EB8392D29ED974E006285B9 /* OpenAISwift */; };
 		C2C6F61629EDA87000A985C3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C6F61529EDA87000A985C3 /* SettingsViewController.swift */; };
 		C2C6F61829EDA89E00A985C3 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C6F61729EDA89E00A985C3 /* PlayViewController.swift */; };
@@ -31,6 +32,7 @@
 		3EB492DC29ED9618008A1398 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3EB492DF29ED9618008A1398 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3EB492E129ED9618008A1398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EB5DF6529F6D2E300854678 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		C2C6F61529EDA87000A985C3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		C2C6F61729EDA89E00A985C3 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +75,7 @@
 				C2C6F61529EDA87000A985C3 /* SettingsViewController.swift */,
 				2C995CE929F1818900E01E44 /* PreGameSettingsViewController.swift */,
 				2C995CEB29F2D2EF00E01E44 /* GameViewController.swift */,
+				3EB5DF6529F6D2E300854678 /* ResultsViewController.swift */,
 				3EB492D929ED9617008A1398 /* Main.storyboard */,
 				3EB492DC29ED9618008A1398 /* Assets.xcassets */,
 				3EB492DE29ED9618008A1398 /* LaunchScreen.storyboard */,
@@ -165,6 +168,7 @@
 				2C995CEA29F1818900E01E44 /* PreGameSettingsViewController.swift in Sources */,
 				3EB492D629ED9617008A1398 /* SceneDelegate.swift in Sources */,
 				C2C6F61629EDA87000A985C3 /* SettingsViewController.swift in Sources */,
+				3EB5DF6629F6D2E300854678 /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
