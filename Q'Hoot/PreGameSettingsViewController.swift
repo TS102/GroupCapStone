@@ -47,6 +47,7 @@ class PreGameSettingsViewController:UIViewController, UIPickerViewDelegate, UIPi
         return 1
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
         if pickerView == numberOfTeamsPicker {
             return teamPickerData.count
         }
@@ -59,6 +60,10 @@ class PreGameSettingsViewController:UIViewController, UIPickerViewDelegate, UIPi
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
            {
+               
+               pickerView.setValue(UIColor.white, forKeyPath: "textColor")
+               
+               
         if pickerView == numberOfTeamsPicker {
             return teamPickerData[row]
         }

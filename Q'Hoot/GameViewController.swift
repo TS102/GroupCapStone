@@ -18,6 +18,9 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
 print("\(teamPickerData) \(timeLimitData) \(categoryData)")
         // Do any additional setup after loading the view.
+        //navigationController?.title = "\(selectedCategory)"
+        
+        
     }
    
     /*
