@@ -1,18 +1,17 @@
 //
-//  PlayViewController.swift
+//  GameViewController.swift
 //  Q'Hoot
 //
-//  Created by Steven Newman on 4/17/23.
+//  Created by Easton Butterfield on 4/21/23.
 //
 
 import UIKit
+protocol PreGameSettings {
+func passGameSettrings(teams: Int, timeLimit: Int, Category: String)
+    
+}
+class GameViewController: UIViewController {
 
-class PlayViewController: UIViewController {
-
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
