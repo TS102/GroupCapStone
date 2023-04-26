@@ -20,7 +20,7 @@
                                 <rect key="frame" x="172" y="123" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DARK/LIGHT MODE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdq-33-b5x">
-                                <rect key="frame" x="120" y="94.666666666666671" width="150" height="20.333333333333314"/>
+                                <rect key="frame" x="120" y="94.666666666666671" width="150" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -320,7 +320,7 @@
         <!--GAME-->
         <scene sceneID="rv7-f7-ogU">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="LW1-7o-RwC" customClass="GameViewController" customModule="Q_Hoot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" modalPresentationStyle="fullScreen" id="LW1-7o-RwC" customClass="GameViewController" customModule="Q_Hoot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4jH-A1-R9B">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -365,7 +365,7 @@
                                         <color key="sectionIndexColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="sectionIndexBackgroundColor" red="0.96862745289999996" green="0.79607844350000001" blue="0.34901961679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="DVu-Gx-OPV">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Guesses" id="DVu-Gx-OPV" customClass="guessesTableViewCell" customModule="Q_Hoot" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="358" height="34.666667938232422"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DVu-Gx-OPV" id="dHQ-T5-8Sn">
@@ -387,6 +387,9 @@
                                                                     <color key="backgroundColor" red="0.96862745289999996" green="0.79607844350000001" blue="0.34901961679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <state key="normal" title="Button"/>
                                                                     <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system" title=""/>
+                                                                    <connections>
+                                                                        <action selector="buttonTapped:" destination="DVu-Gx-OPV" eventType="touchUpInside" id="Kpo-KR-qvA"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
@@ -399,8 +402,11 @@
                                                         <constraint firstItem="29q-Fb-bZy" firstAttribute="leading" secondItem="dHQ-T5-8Sn" secondAttribute="leading" id="gcq-y9-FyI"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="guessesTextfield" destination="z8u-Wj-dk4" id="PlX-Qg-q7k"/>
+                                                </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="M8Z-3f-b2I">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserGuesses" id="M8Z-3f-b2I" customClass="UserGuessesTableViewCell" customModule="Q_Hoot" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="84.666667938232422" width="358" height="61.333332061767578"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M8Z-3f-b2I" id="dAQ-1d-YUy">
@@ -422,6 +428,9 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" red="0.96862745289999996" green="0.79607844350000001" blue="0.34901961679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <connections>
+                                                    <outlet property="usersGuessesLabel" destination="Dd5-5X-iIz" id="sSS-Qd-nHw"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
@@ -469,6 +478,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="GAME" id="cwp-UN-6zO"/>
+                    <connections>
+                        <outlet property="tableview" destination="LMb-HW-l13" id="FWW-sb-bNC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6U-r6-zBG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,6 +8,9 @@
 import UIKit
 
 class UserGuessesTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var usersGuessesLabel: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,5 +22,8 @@ class UserGuessesTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    func update(with label: String) {
+        usersGuessesLabel.text = label
+    }
 }

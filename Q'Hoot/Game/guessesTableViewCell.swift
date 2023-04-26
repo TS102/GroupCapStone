@@ -7,14 +7,19 @@
 
 import UIKit
 
+
+
 class guessesTableViewCell: UITableViewCell {
+    
     
     @IBOutlet weak var guessesTextfield: UITextField!
     
+    var delegate: GuessesTableViewCellDelegate?
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        guessesTextfield.placeholder = "Enter guess"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -22,8 +27,16 @@ class guessesTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+//    func guessesMade(tableView: UITableView) {
+//        guard let guesses = guessesTextfield.text else { return }
+//        userguesses.append(guesses)
+//        tableView.reloadData()
+//    }
+    
 
-    @IBAction func buttonTapped(_ sender: Any) {
-        
+    @IBAction func buttonTapped(_ sender: UITableView) {
+        guard let guesses = guessesTextfield.text else { return }
+        delegate?.guessesMade(guess: guesses)
     }
 }
