@@ -23,8 +23,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
     // this is where the guesses will go when the user makes them
     var userGuesses: [String] = []
     
-    
-    
+    @IBOutlet weak var promptLabel: UILabel!
     @IBOutlet var tableview: UITableView!
    
 
@@ -35,6 +34,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableview.delegate = self
         tableview.dataSource = self
 print("\(teamPickerData) \(timeLimitData) \(categoryData)")
+        promptLabel.text = "Write as many words that fall into the \(categoryData) category as you can in \(timeLimitData) seconds!"
       
         // Do any additional setup after loading the view.
         //navigationController?.title = "\(selectedCategory)"
