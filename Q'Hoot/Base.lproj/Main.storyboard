@@ -459,6 +459,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="GAME" id="cwp-UN-6zO"/>
                     <connections>
+                        <outlet property="promptLabel" destination="yxZ-wm-ZvK" id="kLg-F2-gdl"/>
                         <outlet property="tableview" destination="LMb-HW-l13" id="FWW-sb-bNC"/>
                     </connections>
                 </viewController>
