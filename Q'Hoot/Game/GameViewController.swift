@@ -25,6 +25,9 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var timerLabel: UILabel!
     
     
+    
+    @IBOutlet weak var promptLabel: UILabel!
+
     @IBOutlet var tableview: UITableView!
     var timer: Timer?
    
@@ -38,8 +41,10 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableview.dataSource = self
         seconds = timeLimitData
 print("\(teamPickerData) \(timeLimitData) \(categoryData)")
+
 //        countdown(number: timeLimitData)
         startTimer()
+        promptLabel.text = "Write as many words that fall into the \(categoryData) category as you can in \(timeLimitData) seconds!"
       
         // Do any additional setup after loading the view.
         //navigationController?.title = "\(selectedCategory)"
