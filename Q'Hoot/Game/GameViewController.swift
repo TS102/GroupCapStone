@@ -17,24 +17,29 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
     
 
     var teamPickerData: String = ""
-    var timeLimitData: String = ""
+    var timeLimitData: Int = 30
     var categoryData: String = ""
-    
     // this is where the guesses will go when the user makes them
     var userGuesses: [String] = []
-    
+    var seconds: Int = 30
+    @IBOutlet weak var timerLabel: UILabel!
     
     
     @IBOutlet var tableview: UITableView!
+    var timer: Timer?
    
 
+    
     override func viewDidLoad() {
         print(userGuesses)
         super.viewDidLoad()
         tableview.reloadData()
         tableview.delegate = self
         tableview.dataSource = self
+        seconds = timeLimitData
 print("\(teamPickerData) \(timeLimitData) \(categoryData)")
+//        countdown(number: timeLimitData)
+        startTimer()
       
         // Do any additional setup after loading the view.
         //navigationController?.title = "\(selectedCategory)"
@@ -63,9 +68,9 @@ print("\(teamPickerData) \(timeLimitData) \(categoryData)")
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Guesses", for: indexPath) as! guessesTableViewCell
             
-           // let guesses = cell.userguesses
+            // let guesses = cell.userguesses
             cell.delegate = self
-           // print(guesses)
+            // print(guesses)
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserGuesses", for: indexPath) as! UserGuessesTableViewCell
@@ -75,11 +80,44 @@ print("\(teamPickerData) \(timeLimitData) \(categoryData)")
             
             return cell
         }
+    }
+//        func countdown(number: Int) {
+//            var count = number
+//            let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+//                self.timerLabel.text = String(count)
+//                count -= 1
+//                if count < 0 {
+//                    timer.invalidate()
+//                    self.timerLabel.text = "\(count)"
+//                }
+//            }
+//        }
         
 //        return UITableViewCell.init(style: .default, reuseIdentifier: nil)
+    @objc func updateTimer() {
+        if seconds > 0 {
+            seconds -= 1
+            timerLabel.text = "\(seconds)"
+        } else {
+            stopTimer()
+            performSegue(withIdentifier: "Results", sender: Any?.self)
+        }
     }
+
     
-    
+    func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+    }
+    func stopTimer() {
+        timer?.invalidate()
+        timer = nil
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "Results" else {return}
+            let vc = segue.destination as! ResultsViewController
+        vc.category = categoryData
+        vc.userGuesses = userGuesses
+    }
     
     /*
     // MARK: - Navigation

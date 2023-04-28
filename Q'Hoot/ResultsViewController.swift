@@ -10,13 +10,13 @@ import UIKit
 class ResultsViewController: UIViewController {
 
     var category = "Food"
-    var userGuesses = ["Pizza", "Cars", "Chicken", "laptop", "shoes", "columbus", "Pears", "pirates", "hotdog"]
+    var userGuesses: [String] = []
     var chatMessage = ""
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+print (userGuesses)
         // Do any additional setup after loading the view.
     }
     

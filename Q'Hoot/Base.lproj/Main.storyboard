@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aOq-Yt-oMS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aOq-Yt-oMS">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -480,6 +480,8 @@
                     <navigationItem key="navigationItem" title="GAME" id="cwp-UN-6zO"/>
                     <connections>
                         <outlet property="tableview" destination="LMb-HW-l13" id="FWW-sb-bNC"/>
+                        <outlet property="timerLabel" destination="ReL-1C-Cg0" id="fCp-TJ-E60"/>
+                        <segue destination="mAm-dP-MRj" kind="show" identifier="Results" id="iWU-cP-q9n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6U-r6-zBG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -491,11 +493,12 @@
             <objects>
                 <viewController id="mAm-dP-MRj" customClass="ResultsViewController" customModule="Q_Hoot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DRZ-ym-QbC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Jkr-26-SWS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="dB3-ZK-iGw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uzd-WZ-aRo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

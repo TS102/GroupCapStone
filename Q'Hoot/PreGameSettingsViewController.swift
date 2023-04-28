@@ -12,10 +12,10 @@ class PreGameSettingsViewController:UIViewController, UIPickerViewDelegate, UIPi
         //
     }
     var teamSelected: String = ""
-    var timeLimitSelected: String = ""
+    var timeLimitSelected: Int = 30
     var catergorySelected: String = ""
     let teamPickerData = ["1", "2", "3"]
-    let timeLimitData = ["30","60", "90"]
+    let timeLimitData = [5, 30, 60, 90]
     let categoryData = ["Colors", "Plants", "Food", "Trees"]
     @IBOutlet weak var numberOfTeamsPicker: UIPickerView!
     @IBOutlet weak var timeLimitPicker: UIPickerView!
@@ -68,7 +68,7 @@ class PreGameSettingsViewController:UIViewController, UIPickerViewDelegate, UIPi
             return teamPickerData[row]
         }
         else if pickerView == timeLimitPicker {
-            return timeLimitData[row]
+            return String(timeLimitData[row])
         }
         else if pickerView == categoryPicker{
             return categoryData[row]
