@@ -86,19 +86,8 @@ print("\(teamPickerData) \(timeLimitData) \(categoryData)")
             return cell
         }
     }
-//        func countdown(number: Int) {
-//            var count = number
-//            let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-//                self.timerLabel.text = String(count)
-//                count -= 1
-//                if count < 0 {
-//                    timer.invalidate()
-//                    self.timerLabel.text = "\(count)"
-//                }
-//            }
-//        }
-        
-//        return UITableViewCell.init(style: .default, reuseIdentifier: nil)
+
+
     @objc func updateTimer() {
         if seconds > 0 {
             seconds -= 1
@@ -117,6 +106,7 @@ print("\(teamPickerData) \(timeLimitData) \(categoryData)")
         timer?.invalidate()
         timer = nil
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "Results" else {return}
             let vc = segue.destination as! ResultsViewController
