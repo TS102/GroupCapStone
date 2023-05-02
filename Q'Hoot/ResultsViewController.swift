@@ -41,7 +41,7 @@ class ResultsViewController: UIViewController {
     
     func apiCall() {
         let url = URL(string: "https://api.openai.com/v1/completions")!
-        let apiKey = "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"
+        let apiKey = ""
         let headers = ["Content-Type": "application/json",
                        "Authorization": "Bearer " + apiKey]
         let data = ["model": "text-davinci-003",
