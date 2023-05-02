@@ -6,52 +6,61 @@
 //
 
 import UIKit
+
 protocol PreGameSettings {
 func passGameSettrings(teams: Int, timeLimit: Int, Category: String)
 }
+
 protocol GuessesTableViewCellDelegate {
     func guessesMade(guess: String)
 }
+
 class GameViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GuessesTableViewCellDelegate  {
     
-    
-
     var teamPickerData: String = ""
     var timeLimitData: Int = 30
     var categoryData: String = ""
+    
     // this is where the guesses will go when the user makes them
     var userGuesses: [String] = []
     var seconds: Int = 30
+    
     @IBOutlet weak var timerLabel: UILabel!
-    
-    
-    
     @IBOutlet weak var promptLabel: UILabel!
-
     @IBOutlet var tableview: UITableView!
+    
     var timer: Timer?
-   
-
     
     override func viewDidLoad() {
-        print(userGuesses)
         super.viewDidLoad()
-        tableview.reloadData()
         tableview.delegate = self
         tableview.dataSource = self
+        tableview.reloadData()
         seconds = timeLimitData
 print("\(teamPickerData) \(timeLimitData) \(categoryData)")
-
-//        countdown(number: timeLimitData)
-        startTimer()
+        print(userGuesses)
         promptLabel.text = "Write as many words that fall into the \(categoryData) category as you can in \(timeLimitData) seconds!"
       
-        // Do any additional setup after loading the view.
-        //navigationController?.title = "\(selectedCategory)"
+        showAlert()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        
        }
 
+    func showAlert() {
+        let gamePrompt = UIAlertController(title: "Write as many words that fall into the \(categoryData) category as you can in \(timeLimitData) seconds!", message: nil, preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Go!", style: .default) { (action) in
+            self.startTimer()
+        }
+        
+        gamePrompt.addAction(action)
+        
+        present(gamePrompt, animated: true, completion: nil)
+    }
+    
        @objc func keyboardWillShow(notification: NSNotification) {
            if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
                if self.view.frame.origin.y == 0 {
@@ -118,10 +127,14 @@ print("\(teamPickerData) \(timeLimitData) \(categoryData)")
     func startTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
+    
     func stopTimer() {
         timer?.invalidate()
         timer = nil
     }
+    
+   
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "Results" else {return}
