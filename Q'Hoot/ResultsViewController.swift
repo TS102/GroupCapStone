@@ -10,7 +10,6 @@ import UIKit
 class ResultsViewController: UIViewController {
 
     var category = ""
-    var userGuesses: [String] = []
     var timer: Timer?
     
     // MARK: going to be using these for later
@@ -29,7 +28,7 @@ class ResultsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         categoryLabel.text = category
-        guessesLabel.text = "\(userGuesses)"
+        guessesLabel.text = "\(team1Guesses)"
         
         // Do any additional setup after loading the view.
     }
@@ -45,7 +44,7 @@ class ResultsViewController: UIViewController {
         let headers = ["Content-Type": "application/json",
                        "Authorization": "Bearer " + apiKey]
         let data = ["model": "text-davinci-003",
-                    "prompt": "you are a word scanner that will scan an array and give me the number of corrects words from that array based on a category. here is the array of words\(userGuesses), and this is the category \(category) give me only the number.",
+                    "prompt": "you are a word scanner that will scan an array and give me the number of corrects words from that array based on a category. here is the array of words\(team1Guesses), and this is the category \(category) give me only the number.",
                     "max_tokens": 25,
                     "temperature": 0.2
         ] as [String : Any]
@@ -82,8 +81,7 @@ class ResultsViewController: UIViewController {
     
  
     @IBAction func buttonTapped(_ sender: Any) {
-        apiCall()
-    
+//        apiCall()
     }
     
     

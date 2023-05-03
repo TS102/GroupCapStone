@@ -17,12 +17,14 @@ protocol GuessesTableViewCellDelegate {
 
 class GameViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GuessesTableViewCellDelegate  {
     
+    var gamesOver: Bool = false
     var teamPickerData: String = ""
     var timeLimitData: Int = 30
     var categoryData: String = ""
-    
     // this is where the guesses will go when the user makes them
-    var userGuesses: [String] = []
+    var team1Guesses: [String] = []
+    var team2Guesses: [String] = []
+    var team3Guesses: [String] = []
     var seconds: Int = 30
     
     @IBOutlet weak var timerLabel: UILabel!
@@ -38,15 +40,13 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableview.reloadData()
         seconds = timeLimitData
 print("\(teamPickerData) \(timeLimitData) \(categoryData)")
-        print(userGuesses)
+        print(team1Guesses)
         promptLabel.text = "Write as many words that fall into the \(categoryData) category as you can in \(timeLimitData) seconds!"
       
         showAlert()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-        
        }
 
     func showAlert() {
@@ -77,7 +77,7 @@ print("\(teamPickerData) \(timeLimitData) \(categoryData)")
     
     
     func guessesMade(guess: String) {
-        userGuesses.insert(guess, at: 0)
+        team1Guesses.insert(guess, at: 0)
         tableview.reloadSections(.init(integer: 1), with: .automatic)
     }
     
@@ -90,7 +90,7 @@ print("\(teamPickerData) \(timeLimitData) \(categoryData)")
         if section == 0 {
             return 1
         } else {
-            return userGuesses.count
+            return team1Guesses.count
         }
     }
     
@@ -104,9 +104,18 @@ print("\(teamPickerData) \(timeLimitData) \(categoryData)")
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserGuesses", for: indexPath) as! UserGuessesTableViewCell
-            let guess = userGuesses[indexPath.row]
-            cell.update(with: guess)
-            print(userGuesses)
+            let teamsCount = Int(teamPickerData)
+            switch teamsCount {
+            case 2:  let guess = team2Guesses[indexPath.row]
+                cell.update(with: guess)
+
+            case 3:  let guess = team3Guesses[indexPath.row]
+                cell.update(with: guess)
+
+            default:  let guess = team1Guesses[indexPath.row]
+                cell.update(with: guess)
+
+            }
             
             return cell
         }
@@ -119,7 +128,7 @@ print("\(teamPickerData) \(timeLimitData) \(categoryData)")
             timerLabel.text = "\(seconds)"
         } else {
             stopTimer()
-            performSegue(withIdentifier: "Results", sender: Any?.self)
+            teams()
         }
     }
 
@@ -133,14 +142,24 @@ print("\(teamPickerData) \(timeLimitData) \(categoryData)")
         timer = nil
     }
     
-   
-
+    func teams() {
+        var teams = 1
+        guard let teamsCount = Int(teamPickerData) else { return }
+        if teamsCount != teams {
+            tableview.reloadData()
+            viewDidLoad().self
+            teams += 1
+            print("new game")
+        } else if teamsCount == teams {
+            performSegue(withIdentifier: "Results", sender: Any?.self)
+        }
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "Results" else {return}
             let vc = segue.destination as! ResultsViewController
         vc.category = categoryData
-        vc.userGuesses = userGuesses
+        vc.team1Guesses = team1Guesses
     }
     
     /*

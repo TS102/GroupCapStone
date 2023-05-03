@@ -11,7 +11,6 @@ class UserGuessesTableViewCell: UITableViewCell {
     
     @IBOutlet weak var usersGuessesLabel: UILabel!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
