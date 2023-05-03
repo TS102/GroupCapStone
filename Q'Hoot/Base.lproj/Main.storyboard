@@ -477,6 +477,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellowCloud" translatesAutoresizingMaskIntoConstraints="NO" id="Xvj-sX-U8Z">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="category" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2d-Hb-nyl">
                                 <rect key="frame" x="161" y="97" width="68" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -503,9 +506,6 @@
                                     <action selector="buttonTapped:" destination="mAm-dP-MRj" eventType="touchUpInside" id="h2n-Qw-ONT"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellowCloud" translatesAutoresizingMaskIntoConstraints="NO" id="Xvj-sX-U8Z">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Jkr-26-SWS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
