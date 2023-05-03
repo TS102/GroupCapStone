@@ -18,12 +18,12 @@ protocol GuessesTableViewCellDelegate {
 class GameViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GuessesTableViewCellDelegate  {
     
     var teamPickerData: String = ""
-    var timeLimitData: Int = 30
+    var timeLimitData: Int = 5
     var categoryData: String = ""
     
     // this is where the guesses will go when the user makes them
     var userGuesses: [String] = []
-    var seconds: Int = 30
+    var seconds: Int = 5
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var promptLabel: UILabel!

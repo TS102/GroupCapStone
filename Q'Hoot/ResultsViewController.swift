@@ -30,6 +30,7 @@ class ResultsViewController: UIViewController {
         super.viewDidLoad()
         categoryLabel.text = category
         guessesLabel.text = "\(userGuesses)"
+        showResultsAlert()
         
         // Do any additional setup after loading the view.
     }
@@ -78,6 +79,36 @@ class ResultsViewController: UIViewController {
                 print("Error decoding response: \(error.localizedDescription)")
             }
         }.resume()
+    }
+    
+    func showResultsAlert() {
+        let image = UIImage(named: "QHOOT LOGO")
+        let alert = UIAlertController(title: "Good Work", message: nil, preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Get results", style: .default) { (action) in
+            self.apiCall()
+        }
+        
+        let titleAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 25)!, NSAttributedString.Key.foregroundColor: UIColor.black]
+        let titleString = NSAttributedString(string: "Good Work", attributes: titleAttributes)
+        let messageAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.black]
+        let messageString = NSAttributedString(string: "Ready to see results", attributes: messageAttributes)
+        alert.setValue(titleString, forKey: "attributedTitle")
+        alert.setValue(messageString, forKey: "attributedMessage")
+        
+        let imageView = UIImageView(frame: CGRect(x: 72.5, y: 90, width: 250, height: 230))
+        imageView.image = image
+        
+
+        let height: NSLayoutConstraint = NSLayoutConstraint(item: alert.view as Any, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 0.5, constant: self.view.frame.height * 0.50)
+        
+        let width: NSLayoutConstraint = NSLayoutConstraint(item: alert.view as Any, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1.0, constant: self.view.frame.width * 1)
+        
+        alert.addAction(action)
+        alert.view.addSubview(imageView)
+        alert.view.addConstraint(height)
+        alert.view.addConstraint(width)
+        self.present(alert, animated: true, completion: nil)
     }
     
  
