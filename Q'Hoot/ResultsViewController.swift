@@ -29,7 +29,7 @@ class ResultsViewController: UIViewController {
         super.viewDidLoad()
         categoryLabel.text = category
         guessesLabel.text = "\(team1Guesses)"
-        
+        print(team1Guesses, team2Guesses, team3Guesses)
         // Do any additional setup after loading the view.
     }
     

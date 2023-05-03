@@ -16,7 +16,7 @@ protocol GuessesTableViewCellDelegate {
 }
 
 class GameViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GuessesTableViewCellDelegate  {
-    
+    var currentTeam: Int = 1
     var gamesOver: Bool = false
     var teamPickerData: String = ""
     var timeLimitData: Int = 30
@@ -77,8 +77,16 @@ print("\(teamPickerData) \(timeLimitData) \(categoryData)")
     
     
     func guessesMade(guess: String) {
-        team1Guesses.insert(guess, at: 0)
-        tableview.reloadSections(.init(integer: 1), with: .automatic)
+        if currentTeam == 1 {
+            team1Guesses.insert(guess, at: 0)
+            tableview.reloadSections(.init(integer: 1), with: .automatic)
+        } else if currentTeam == 2 {
+            team2Guesses.insert(guess, at: 0)
+            tableview.reloadSections(.init(integer: 1), with: .automatic)
+        } else if currentTeam == 3 {
+            team3Guesses.insert(guess, at: 0)
+            tableview.reloadSections(.init(integer: 1), with: .automatic)
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -89,8 +97,12 @@ print("\(teamPickerData) \(timeLimitData) \(categoryData)")
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
-        } else {
+        } else if currentTeam == 1 {
             return team1Guesses.count
+        } else if currentTeam == 2 {
+            return team2Guesses.count
+        } else {
+            return team3Guesses.count
         }
     }
     
@@ -104,20 +116,19 @@ print("\(teamPickerData) \(timeLimitData) \(categoryData)")
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserGuesses", for: indexPath) as! UserGuessesTableViewCell
-            let teamsCount = Int(teamPickerData)
-            switch teamsCount {
-            case 2:  let guess = team2Guesses[indexPath.row]
+            if currentTeam == 1 {
+                let guess = team1Guesses[indexPath.row]
                 cell.update(with: guess)
-
-            case 3:  let guess = team3Guesses[indexPath.row]
+                return cell
+            } else if currentTeam == 2 {
+                let guess = team2Guesses[indexPath.row]
                 cell.update(with: guess)
-
-            default:  let guess = team1Guesses[indexPath.row]
+                return cell
+            } else {
+                let guess = team3Guesses[indexPath.row]
                 cell.update(with: guess)
-
+                return cell
             }
-            
-            return cell
         }
     }
 
@@ -143,14 +154,13 @@ print("\(teamPickerData) \(timeLimitData) \(categoryData)")
     }
     
     func teams() {
-        var teams = 1
         guard let teamsCount = Int(teamPickerData) else { return }
-        if teamsCount != teams {
+        if teamsCount != currentTeam {
+            currentTeam += 1
             tableview.reloadData()
-            viewDidLoad().self
-            teams += 1
-            print("new game")
-        } else if teamsCount == teams {
+            seconds = timeLimitData
+            showAlert()
+        } else if teamsCount == currentTeam {
             performSegue(withIdentifier: "Results", sender: Any?.self)
         }
     }
@@ -160,6 +170,8 @@ print("\(teamPickerData) \(timeLimitData) \(categoryData)")
             let vc = segue.destination as! ResultsViewController
         vc.category = categoryData
         vc.team1Guesses = team1Guesses
+        vc.team2Guesses = team2Guesses
+        vc.team3Guesses = team3Guesses
     }
     
     /*
