@@ -19,13 +19,15 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
     var currentTeam: Int = 1
     var gamesOver: Bool = false
     var teamPickerData: String = ""
-    var timeLimitData: Int = 30
+    var timeLimitData: Int = 5
     var categoryData: String = ""
     // this is where the guesses will go when the user makes them
+
     var team1Guesses: [String] = []
     var team2Guesses: [String] = []
     var team3Guesses: [String] = []
     var seconds: Int = 30
+    var userGuesses: [String] = []
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var promptLabel: UILabel!

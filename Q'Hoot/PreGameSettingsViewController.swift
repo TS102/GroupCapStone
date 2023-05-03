@@ -12,7 +12,7 @@ class PreGameSettingsViewController:UIViewController, UIPickerViewDelegate, UIPi
         //
     }
     var teamSelected: String = ""
-    var timeLimitSelected: Int = 30
+    var timeLimitSelected: Int = 1
     var catergorySelected: String = ""
     let teamPickerData = ["1", "2", "3"]
     let timeLimitData = [5, 30, 60, 90]

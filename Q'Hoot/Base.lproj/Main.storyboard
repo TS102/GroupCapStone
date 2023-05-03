@@ -20,7 +20,7 @@
                                 <rect key="frame" x="172" y="123" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DARK/LIGHT MODE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdq-33-b5x">
-                                <rect key="frame" x="120" y="94.666666666666671" width="150" height="20.333333333333329"/>
+                                <rect key="frame" x="120" y="94.666666666666671" width="150" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
