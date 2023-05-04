@@ -174,6 +174,7 @@ print("\(teamPickerData) \(timeLimitData) \(categoryData)")
         vc.team1Guesses = team1Guesses
         vc.team2Guesses = team2Guesses
         vc.team3Guesses = team3Guesses
+        vc.numberOfTeams = Int(teamPickerData) ?? 1
     }
     
     /*
