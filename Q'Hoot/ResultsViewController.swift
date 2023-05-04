@@ -17,8 +17,8 @@ class ResultsViewController: UIViewController {
     var team2Guesses: [String] = []
     var team3Guesses: [String] = []
     
-    // put all the teams scores in this array
-    var teamScores: [Int] = []
+//    // put all the teams scores in this array
+//    var teamScores: [Int] = []
     
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var guessesLabel: UILabel!
@@ -45,13 +45,13 @@ class ResultsViewController: UIViewController {
     
     func apiCall() {
         let url = URL(string: "https://api.openai.com/v1/completions")!
-        let apiKey = ""
+        let apiKey = "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"
         let headers = ["Content-Type": "application/json",
                        "Authorization": "Bearer " + apiKey]
         switch numberOfTeams {
         case 1 : prompt = "you are a word scanner that will scan an array and give me the number of corrects words from that array based on a category. here is the array of words\(team1Guesses), and the category is \(category) give me only the number."
-        case 2: prompt = "you are a word scanner that will scan an array and give me the number of corrects words from that array based on a category. here is array one: \(team2Guesses) array two: \(team2Guesses) and the category is \(category) give me the shortest answer possible which should be only numbers."
-        case 3: prompt = "you are a word scanner that will scan an array and give me the number of corrects words from that array based on a category. here is array one: \(team2Guesses) array two: \(team2Guesses) array three: \(team3Guesses) and the category is \(category) give me the shortest answer possible which should be only numbers."
+        case 2: prompt = "you are a word scanner that will scan an array and give me the number of corrects words from that array based on a category. here is array one: \(team1Guesses) array two: \(team2Guesses) and the category is \(category) give me the shortest answer possible which should be only numbers."
+        case 3: prompt = "you are a word scanner that will scan an array and give me the number of corrects words from that array based on a category. here is array one: \(team1Guesses) array two: \(team2Guesses) array three: \(team3Guesses) and the category is \(category) give me the shortest answer possible which should be only numbers."
         default: print("error")
         }
         let data = ["model": "text-davinci-003",
@@ -74,10 +74,10 @@ class ResultsViewController: UIViewController {
                 if let choices = json?["choices"] as? [[String: Any]], let text = choices.first?["text"] as? String {
                     DispatchQueue.main.async {
                         // attatch the label to the the chats response here
-                        guard let score = Int(text) else { return }
-                        self.teamScores.append(score)
-                        self.chatLabel.text = String(score)
-                        print(score)
+//                        guard let score = Int(text) else { return }
+//                        self.teamScores.append(score)
+                        self.chatLabel.text = text
+                        print(text)
                         }
                 } else {
                     print("\(String(describing: json))")
@@ -96,7 +96,7 @@ class ResultsViewController: UIViewController {
         
         let action = UIAlertAction(title: "Get results", style: .default) { (action) in
             self.apiCall()
-            print(self.prompt)
+//            print(self.prompt)
         }
         
         let titleAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 25)!, NSAttributedString.Key.foregroundColor: UIColor.black]

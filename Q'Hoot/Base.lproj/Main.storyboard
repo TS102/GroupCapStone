@@ -480,52 +480,54 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellowCloud" translatesAutoresizingMaskIntoConstraints="NO" id="Xvj-sX-U8Z">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="category" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2d-Hb-nyl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="category" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2d-Hb-nyl">
                                 <rect key="frame" x="161" y="97" width="68" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR TEAM" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2U-Us-3Ri">
-                                <rect key="frame" x="147" y="333" width="96" height="20.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="YOUR TEAM" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2U-Us-3Ri">
+                                <rect key="frame" x="140" y="240" width="95.666666666666686" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat text here" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RM-kf-d74">
-                                <rect key="frame" x="140" y="545" width="110" height="43"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NkC-iA-zVQ">
-                                <rect key="frame" x="161" y="670" width="75" height="35"/>
+                                <rect key="frame" x="292" y="24.000000000000004" width="75" height="34.333333333333343"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="mAm-dP-MRj" eventType="touchUpInside" id="h2n-Qw-ONT"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Chat text here" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RM-kf-d74">
+                                <rect key="frame" x="10" y="513" width="370" height="151"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Jkr-26-SWS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="a2U-Us-3Ri" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" constant="147" id="Af0-be-R8k"/>
-                            <constraint firstItem="7RM-kf-d74" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" constant="140" id="Dsx-44-kqh"/>
+                            <constraint firstItem="NkC-iA-zVQ" firstAttribute="top" secondItem="DRZ-ym-QbC" secondAttribute="top" constant="24" id="6TV-zb-PwT"/>
+                            <constraint firstItem="NkC-iA-zVQ" firstAttribute="leading" secondItem="DRZ-ym-QbC" secondAttribute="leading" constant="292" id="B2u-6U-clf"/>
+                            <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="7RM-kf-d74" secondAttribute="trailing" constant="10" id="ChZ-5x-7O2"/>
                             <constraint firstItem="n2d-Hb-nyl" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" constant="161" id="GsF-4g-t4b"/>
-                            <constraint firstItem="Jkr-26-SWS" firstAttribute="bottom" secondItem="7RM-kf-d74" secondAttribute="bottom" constant="199" id="HoN-cf-Tdx"/>
-                            <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="a2U-Us-3Ri" secondAttribute="trailing" constant="147" id="NXr-4c-tTn"/>
+                            <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="a2U-Us-3Ri" secondAttribute="trailing" constant="154.33000000000001" id="MRc-Qj-mmX"/>
                             <constraint firstItem="n2d-Hb-nyl" firstAttribute="top" secondItem="Jkr-26-SWS" secondAttribute="top" constant="41" id="RgJ-KI-auo"/>
                             <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="Xvj-sX-U8Z" secondAttribute="trailing" id="UKU-tj-gvh"/>
-                            <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="7RM-kf-d74" secondAttribute="trailing" constant="140" id="dEE-Vm-C32"/>
-                            <constraint firstItem="7RM-kf-d74" firstAttribute="top" secondItem="a2U-Us-3Ri" secondAttribute="bottom" constant="191.66999999999999" id="fjb-1G-HD0"/>
-                            <constraint firstItem="NkC-iA-zVQ" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" constant="161" id="ifn-mB-jqE"/>
+                            <constraint firstAttribute="trailing" secondItem="NkC-iA-zVQ" secondAttribute="trailing" constant="23" id="VZa-ap-dab"/>
+                            <constraint firstItem="Jkr-26-SWS" firstAttribute="bottom" secondItem="7RM-kf-d74" secondAttribute="bottom" constant="10" id="XJ3-hE-op3"/>
+                            <constraint firstItem="a2U-Us-3Ri" firstAttribute="top" secondItem="n2d-Hb-nyl" secondAttribute="bottom" constant="122.67" id="bJ2-9X-w1V"/>
+                            <constraint firstItem="7RM-kf-d74" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" constant="10" id="j7S-KK-5ru"/>
+                            <constraint firstItem="a2U-Us-3Ri" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" constant="140" id="kQm-WD-Y7v"/>
                             <constraint firstItem="Jkr-26-SWS" firstAttribute="bottom" secondItem="Xvj-sX-U8Z" secondAttribute="bottom" id="kbX-6b-mxE"/>
                             <constraint firstItem="Xvj-sX-U8Z" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" id="p8K-GC-LXk"/>
-                            <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="NkC-iA-zVQ" secondAttribute="trailing" constant="154" id="pch-tk-W11"/>
+                            <constraint firstItem="7RM-kf-d74" firstAttribute="top" secondItem="a2U-Us-3Ri" secondAttribute="bottom" constant="220" id="rEl-KD-cOc"/>
                             <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="n2d-Hb-nyl" secondAttribute="trailing" constant="161" id="y7j-G0-L07"/>
                             <constraint firstItem="Xvj-sX-U8Z" firstAttribute="top" secondItem="DRZ-ym-QbC" secondAttribute="top" id="yYN-qs-9fV"/>
-                            <constraint firstItem="Jkr-26-SWS" firstAttribute="bottom" secondItem="NkC-iA-zVQ" secondAttribute="bottom" constant="82" id="z5H-Le-OSD"/>
                         </constraints>
                     </view>
                     <connections>
