@@ -45,13 +45,13 @@ class ResultsViewController: UIViewController {
     
     func apiCall() {
         let url = URL(string: "https://api.openai.com/v1/completions")!
-        let apiKey = ""
+        let apiKey = "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"
         let headers = ["Content-Type": "application/json",
                        "Authorization": "Bearer " + apiKey]
         switch numberOfTeams {
-        case 1 : prompt = "you are a word scanner that will scan an array and give me the number of corrects words from that array based on a category. here is the array of words\(team1Guesses), and the category is \(category) give me only the number."
-        case 2: prompt = "you are a word scanner that will scan an array and give me the number of corrects words from that array based on a category. here is array one: \(team1Guesses) array two: \(team2Guesses) and the category is \(category) give me the shortest answer possible which should be only numbers."
-        case 3: prompt = "you are a word scanner that will scan an array and give me the number of corrects words from that array based on a category. here is array one: \(team1Guesses) array two: \(team2Guesses) array three: \(team3Guesses) and the category is \(category) give me the shortest answer possible which should be only numbers."
+        case 1 : prompt = "you are game master for a trivia like game where the user is going to give you words that relate to a certain category. you'll give me a score based on how many words are related to the category provided and give them more points for how closely related the words are to that category. the category is \(category), and the words the user has given are \(team1Guesses) give me only the score."
+        case 2: prompt = "you are game master for a trivia like game where teams are going to give you words that relate to a certain category. you'll give me a score based on how many words are related to the category provided and give them more points for how closely related the words are to that category. the category is \(category), and the words that team one has given are \(team1Guesses) and this is team twos words \(team2Guesses) respond with only the scores for each team."
+        case 3: prompt = "you are game master for a trivia like game where teams are going to give you words that relate to a certain category. you'll give me a score based on how many words are related to the category provided and give them more points for how closely related the words are to that category. the category is \(category), and the words that team one has given are \(team1Guesses), and this is team twos words \(team2Guesses), team threes words are \(team3Guesses), respond with only the scores for each team."
         default: print("error")
         }
         let data = ["model": "text-davinci-003",
