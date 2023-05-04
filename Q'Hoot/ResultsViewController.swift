@@ -8,17 +8,17 @@
 import UIKit
 
 class ResultsViewController: UIViewController {
-
+    var numberOfTeams: Int = 1
     var category = ""
     var timer: Timer?
-    
+    var prompt = ""
     // MARK: going to be using these for later
     var team1Guesses: [String] = []
     var team2Guesses: [String] = []
     var team3Guesses: [String] = []
     
-    // put all the teams scores in this array
-    var teamScores: [Int] = []
+//    // put all the teams scores in this array
+//    var teamScores: [Int] = []
     
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var guessesLabel: UILabel!
@@ -27,7 +27,9 @@ class ResultsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem .setHidesBackButton(true, animated: false)
         categoryLabel.text = category
+        
 
         guessesLabel.text = "\(team1Guesses)"
         print(team1Guesses, team2Guesses, team3Guesses)
@@ -43,11 +45,17 @@ class ResultsViewController: UIViewController {
     
     func apiCall() {
         let url = URL(string: "https://api.openai.com/v1/completions")!
-        let apiKey = ""
+        let apiKey = "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"
         let headers = ["Content-Type": "application/json",
                        "Authorization": "Bearer " + apiKey]
+        switch numberOfTeams {
+        case 1 : prompt = "you are game master for a trivia like game where the user is going to give you words that relate to a certain category. you'll give me a score based on how many words are related to the category provided and give them more points for how closely related the words are to that category. the category is \(category), and the words the user has given are \(team1Guesses) give me only the score."
+        case 2: prompt = "you are game master for a trivia like game where teams are going to give you words that relate to a certain category. you'll give me a score based on how many words are related to the category provided and give them more points for how closely related the words are to that category. the category is \(category), and the words that team one has given are \(team1Guesses) and this is team twos words \(team2Guesses) respond with only the scores for each team."
+        case 3: prompt = "you are game master for a trivia like game where teams are going to give you words that relate to a certain category. you'll give me a score based on how many words are related to the category provided and give them more points for how closely related the words are to that category. the category is \(category), and the words that team one has given are \(team1Guesses), and this is team twos words \(team2Guesses), team threes words are \(team3Guesses), respond with only the scores for each team."
+        default: print("error")
+        }
         let data = ["model": "text-davinci-003",
-                    "prompt": "you are a word scanner that will scan an array and give me the number of corrects words from that array based on a category. here is the array of words\(team1Guesses), and this is the category \(category) give me only the number.",
+                    "prompt": "\(prompt)",
                     "max_tokens": 25,
                     "temperature": 0.2
         ] as [String : Any]
@@ -66,10 +74,10 @@ class ResultsViewController: UIViewController {
                 if let choices = json?["choices"] as? [[String: Any]], let text = choices.first?["text"] as? String {
                     DispatchQueue.main.async {
                         // attatch the label to the the chats response here
-                        guard let score = Int(text) else { return }
-                        self.teamScores.append(score)
-                        self.chatLabel.text = String(score)
-                        print(score)
+//                        guard let score = Int(text) else { return }
+//                        self.teamScores.append(score)
+                        self.chatLabel.text = text
+                        print(text)
                         }
                 } else {
                     print("\(String(describing: json))")
@@ -88,6 +96,7 @@ class ResultsViewController: UIViewController {
         
         let action = UIAlertAction(title: "Get results", style: .default) { (action) in
             self.apiCall()
+//            print(self.prompt)
         }
         
         let titleAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 25)!, NSAttributedString.Key.foregroundColor: UIColor.black]
@@ -114,7 +123,7 @@ class ResultsViewController: UIViewController {
     
  
     @IBAction func buttonTapped(_ sender: Any) {
-//        apiCall()
+        performSegue(withIdentifier: "resetGame", sender: nil)
     }
     
     

@@ -11,9 +11,9 @@ class PreGameSettingsViewController:UIViewController, UIPickerViewDelegate, UIPi
     func passGameSettrings(teams: Int, timeLimit: Int, Category: String) {
         //
     }
-    var teamSelected: String = ""
-    var timeLimitSelected: Int = 1
-    var catergorySelected: String = ""
+    var teamSelected: String = "1"
+    var timeLimitSelected: Int = 30
+    var catergorySelected: String = "Colors"
     let teamPickerData = ["1", "2", "3"]
     let timeLimitData = [5, 30, 60, 90]
     let categoryData = ["Colors", "Plants", "Food", "Trees"]

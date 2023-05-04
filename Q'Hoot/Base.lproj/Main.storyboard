@@ -496,14 +496,8 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat text here" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RM-kf-d74">
-                                <rect key="frame" x="140" y="545" width="110" height="43"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NkC-iA-zVQ">
-                                <rect key="frame" x="161" y="670" width="75" height="35"/>
+                                <rect key="frame" x="292" y="24.000000000000004" width="75" height="34.333333333333343"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
@@ -550,6 +544,7 @@
                                 <rect key="frame" x="16" y="476.66666666666669" width="358" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
+
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -588,17 +583,19 @@
                             <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="NkC-iA-zVQ" secondAttribute="trailing" constant="154" id="pch-tk-W11"/>
                             <constraint firstItem="NeP-kF-5TP" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" constant="16" id="pox-qQ-vIj"/>
                             <constraint firstItem="vwr-w1-wKM" firstAttribute="top" secondItem="vkP-ax-WCf" secondAttribute="bottom" constant="8" id="siP-57-Cak"/>
+
                             <constraint firstItem="Xvj-sX-U8Z" firstAttribute="top" secondItem="DRZ-ym-QbC" secondAttribute="top" id="yYN-qs-9fV"/>
-                            <constraint firstItem="Jkr-26-SWS" firstAttribute="bottom" secondItem="NkC-iA-zVQ" secondAttribute="bottom" constant="82" id="z5H-Le-OSD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="RESULTS" id="dB3-ZK-iGw"/>
                     <connections>
                         <outlet property="categoryLabel" destination="n2d-Hb-nyl" id="Bg1-7R-Q0q"/>
                         <outlet property="chatLabel" destination="7RM-kf-d74" id="eYJ-kk-N6q"/>
+
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uzd-WZ-aRo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="o2a-Gg-Wfb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4173.8461538461534" y="-572.2748815165877"/>
         </scene>
