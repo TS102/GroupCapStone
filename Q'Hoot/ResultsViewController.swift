@@ -55,7 +55,7 @@ class ResultsViewController: UIViewController {
         default: print("error")
         }
         let data = ["model": "text-davinci-003",
-                    "prompt": (prompt),
+                    "prompt": "\(prompt)",
                     "max_tokens": 25,
                     "temperature": 0.2
         ] as [String : Any]
