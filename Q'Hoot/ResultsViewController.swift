@@ -27,7 +27,9 @@ class ResultsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem .setHidesBackButton(true, animated: false)
         categoryLabel.text = category
+        
 
         guessesLabel.text = "\(team1Guesses)"
         print(team1Guesses, team2Guesses, team3Guesses)
@@ -114,7 +116,7 @@ class ResultsViewController: UIViewController {
     
  
     @IBAction func buttonTapped(_ sender: Any) {
-//        apiCall()
+        performSegue(withIdentifier: "resetGame", sender: nil)
     }
     
     

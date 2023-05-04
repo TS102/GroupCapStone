@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aOq-Yt-oMS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aOq-Yt-oMS">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,7 +20,7 @@
                                 <rect key="frame" x="172" y="123" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DARK/LIGHT MODE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdq-33-b5x">
-                                <rect key="frame" x="120" y="94.666666666666671" width="150" height="20.333333333333314"/>
+                                <rect key="frame" x="120" y="94.666666666666671" width="150" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -528,14 +528,15 @@
                             <constraint firstItem="Jkr-26-SWS" firstAttribute="bottom" secondItem="NkC-iA-zVQ" secondAttribute="bottom" constant="82" id="z5H-Le-OSD"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="dB3-ZK-iGw"/>
                     <connections>
                         <outlet property="categoryLabel" destination="n2d-Hb-nyl" id="Bg1-7R-Q0q"/>
                         <outlet property="chatLabel" destination="7RM-kf-d74" id="eYJ-kk-N6q"/>
                         <outlet property="guessesLabel" destination="a2U-Us-3Ri" id="lmf-c9-yLi"/>
+                        <segue destination="o2a-Gg-Wfb" kind="unwind" identifier="resetGame" unwindAction="resetGameUnwindWithSegue:" id="KbP-WY-rW5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uzd-WZ-aRo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="o2a-Gg-Wfb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4173.8461538461534" y="-572.2748815165877"/>
         </scene>
