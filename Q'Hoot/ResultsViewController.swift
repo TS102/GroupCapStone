@@ -51,7 +51,7 @@ class ResultsViewController: UIViewController {
     func apiCall() {
         let url = URL(string: "https://api.openai.com/v1/completions")!
         // MARK: delete api key before pushing
-        let apiKey = "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"
+        let apiKey = "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"
         let headers = ["Content-Type": "application/json",
                        "Authorization": "Bearer " + apiKey]
         switch numberOfTeams {
@@ -83,7 +83,9 @@ class ResultsViewController: UIViewController {
                         // attatch the label to the the chats response here
 //                        guard let score = Int(text) else { return }
 //                        self.teamScores.append(score)
-                        self.chatLabel.text = text
+                        
+                        self.chatLabel.text = text.trimmingCharacters(in: .whitespacesAndNewlines)
+                        self.chatLabel.baselineAdjustment = .alignCenters
                         print(text)
                         }
                 } else {
