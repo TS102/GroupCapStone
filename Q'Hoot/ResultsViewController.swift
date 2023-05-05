@@ -21,9 +21,10 @@ class ResultsViewController: UIViewController {
 //    var teamScores: [Int] = []
     
     @IBOutlet weak var categoryLabel: UILabel!
-    @IBOutlet weak var guessesLabel: UILabel!
+    @IBOutlet weak var team1Label: UILabel!
+    @IBOutlet weak var team2Label: UILabel!
+    @IBOutlet weak var team3Label: UILabel!
     @IBOutlet weak var chatLabel: UILabel!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,11 @@ class ResultsViewController: UIViewController {
         categoryLabel.text = category
         
 
-        guessesLabel.text = "\(team1Guesses)"
+        team1Label.text = "Team 1:\(team1Guesses)"
+        team2Label.text = "Team 2:\(team2Guesses)"
+        team3Label.text = "Team 3:\(team3Guesses)"
+        
+        
         print(team1Guesses, team2Guesses, team3Guesses)
         showResultsAlert()
         

@@ -479,7 +479,7 @@
             </objects>
             <point key="canvasLocation" x="3453.8461538461538" y="-572.2748815165877"/>
         </scene>
-        <!--RESULTS-->
+        <!--Results View Controller-->
         <scene sceneID="44R-Eh-bdE">
             <objects>
                 <viewController id="mAm-dP-MRj" customClass="ResultsViewController" customModule="Q_Hoot" customModuleProvider="target" sceneMemberID="viewController">
@@ -487,155 +487,84 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellowCloud" translatesAutoresizingMaskIntoConstraints="NO" id="Xvj-sX-U8Z">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yellowCloud" translatesAutoresizingMaskIntoConstraints="NO" id="Xvj-sX-U8Z">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-<<<<<<< HEAD
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="category" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2d-Hb-nyl">
-                                <rect key="frame" x="161" y="97" width="68" height="20.333333333333329"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="YOUR TEAM" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2U-Us-3Ri">
-                                <rect key="frame" x="140" y="240" width="95.666666666666686" height="20.333333333333314"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-=======
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="category" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2d-Hb-nyl">
                                 <rect key="frame" x="110" y="96" width="170" height="32.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
->>>>>>> UIDESIGN
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NkC-iA-zVQ">
-                                <rect key="frame" x="292" y="24.000000000000004" width="75" height="34.333333333333343"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <action selector="buttonTapped:" destination="mAm-dP-MRj" eventType="touchUpInside" id="h2n-Qw-ONT"/>
-                                </connections>
-                            </button>
-<<<<<<< HEAD
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Chat text here" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RM-kf-d74">
-                                <rect key="frame" x="10" y="513" width="370" height="151"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-=======
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WINNING TEAM!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uze-u2-2D3">
-                                <rect key="frame" x="16" y="214.33333333333334" width="358" height="28"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(winning team goes here)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkP-ax-WCf">
-                                <rect key="frame" x="16" y="250.33333333333337" width="358" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team 1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uze-u2-2D3">
+                                <rect key="frame" x="16" y="214.33333333333334" width="358" height="25.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(winning team score goes here)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwr-w1-wKM">
-                                <rect key="frame" x="16" y="283.33333333333331" width="358" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="team2" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkP-ax-WCf">
+                                <rect key="frame" x="16" y="247.66666666666663" width="358" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR TEAM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mkz-DJ-IsC">
-                                <rect key="frame" x="16" y="383" width="358" height="27.666666666666686"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="team3" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwr-w1-wKM">
+                                <rect key="frame" x="16" y="279.66666666666669" width="358" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat prompt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mkz-DJ-IsC">
+                                <rect key="frame" x="10" y="363.66666666666669" width="370" height="179.00000000000006"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="179" id="8Jz-PF-1Xe"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(YOUR TEAM GOES HERE)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNy-93-kN6">
-                                <rect key="frame" x="16" y="418.66666666666669" width="358" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(YOUR TEAM SCORE GOES HERE)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeP-kF-5TP">
-                                <rect key="frame" x="16" y="447.66666666666669" width="358" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(YOUR TEAMS PLACE GOES HERE)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLR-Wd-EK3">
-                                <rect key="frame" x="16" y="476.66666666666669" width="358" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
->>>>>>> UIDESIGN
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NkC-iA-zVQ">
+                                <rect key="frame" x="131" y="686.66666666666663" width="128" height="51.666666666666629"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Restart Game"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="mAm-dP-MRj" eventType="touchUpInside" id="h2n-Qw-ONT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Jkr-26-SWS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-<<<<<<< HEAD
-                            <constraint firstItem="NkC-iA-zVQ" firstAttribute="top" secondItem="DRZ-ym-QbC" secondAttribute="top" constant="24" id="6TV-zb-PwT"/>
-                            <constraint firstItem="NkC-iA-zVQ" firstAttribute="leading" secondItem="DRZ-ym-QbC" secondAttribute="leading" constant="292" id="B2u-6U-clf"/>
-                            <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="7RM-kf-d74" secondAttribute="trailing" constant="10" id="ChZ-5x-7O2"/>
-                            <constraint firstItem="n2d-Hb-nyl" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" constant="161" id="GsF-4g-t4b"/>
-                            <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="a2U-Us-3Ri" secondAttribute="trailing" constant="154.33000000000001" id="MRc-Qj-mmX"/>
-                            <constraint firstItem="n2d-Hb-nyl" firstAttribute="top" secondItem="Jkr-26-SWS" secondAttribute="top" constant="41" id="RgJ-KI-auo"/>
-                            <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="Xvj-sX-U8Z" secondAttribute="trailing" id="UKU-tj-gvh"/>
-                            <constraint firstAttribute="trailing" secondItem="NkC-iA-zVQ" secondAttribute="trailing" constant="23" id="VZa-ap-dab"/>
-                            <constraint firstItem="Jkr-26-SWS" firstAttribute="bottom" secondItem="7RM-kf-d74" secondAttribute="bottom" constant="10" id="XJ3-hE-op3"/>
-                            <constraint firstItem="a2U-Us-3Ri" firstAttribute="top" secondItem="n2d-Hb-nyl" secondAttribute="bottom" constant="122.67" id="bJ2-9X-w1V"/>
-                            <constraint firstItem="7RM-kf-d74" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" constant="10" id="j7S-KK-5ru"/>
-                            <constraint firstItem="a2U-Us-3Ri" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" constant="140" id="kQm-WD-Y7v"/>
-                            <constraint firstItem="Jkr-26-SWS" firstAttribute="bottom" secondItem="Xvj-sX-U8Z" secondAttribute="bottom" id="kbX-6b-mxE"/>
-                            <constraint firstItem="Xvj-sX-U8Z" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" id="p8K-GC-LXk"/>
-                            <constraint firstItem="7RM-kf-d74" firstAttribute="top" secondItem="a2U-Us-3Ri" secondAttribute="bottom" constant="220" id="rEl-KD-cOc"/>
-                            <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="n2d-Hb-nyl" secondAttribute="trailing" constant="161" id="y7j-G0-L07"/>
-=======
                             <constraint firstItem="n2d-Hb-nyl" firstAttribute="top" secondItem="Jkr-26-SWS" secondAttribute="top" constant="40" id="0eF-Cp-u31"/>
+                            <constraint firstItem="NkC-iA-zVQ" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" constant="131" id="0xy-AE-A0l"/>
                             <constraint firstItem="vkP-ax-WCf" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" constant="16" id="45V-nt-yne"/>
-                            <constraint firstItem="mNy-93-kN6" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" constant="16" id="5Cl-qj-8op"/>
-                            <constraint firstItem="Mkz-DJ-IsC" firstAttribute="top" secondItem="vwr-w1-wKM" secondAttribute="bottom" constant="78.670000000000002" id="6mM-dp-bOF"/>
+                            <constraint firstItem="NkC-iA-zVQ" firstAttribute="top" secondItem="Mkz-DJ-IsC" secondAttribute="bottom" constant="144" id="5Mp-ob-Xjc"/>
+                            <constraint firstItem="Jkr-26-SWS" firstAttribute="bottom" secondItem="NkC-iA-zVQ" secondAttribute="bottom" constant="48.670000000000002" id="7P8-Jb-BaD"/>
                             <constraint firstItem="uze-u2-2D3" firstAttribute="top" secondItem="n2d-Hb-nyl" secondAttribute="bottom" constant="86" id="9qk-Ig-rT5"/>
-                            <constraint firstItem="7RM-kf-d74" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" constant="140" id="Dsx-44-kqh"/>
-                            <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="NeP-kF-5TP" secondAttribute="trailing" constant="16" id="Dzw-BQ-FCh"/>
-                            <constraint firstItem="Jkr-26-SWS" firstAttribute="bottom" secondItem="7RM-kf-d74" secondAttribute="bottom" constant="199" id="HoN-cf-Tdx"/>
                             <constraint firstItem="vwr-w1-wKM" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" constant="16" id="IfY-ct-D3j"/>
-                            <constraint firstItem="bLR-Wd-EK3" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" constant="16" id="JnE-GP-VdJ"/>
+                            <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="Mkz-DJ-IsC" secondAttribute="trailing" constant="10" id="JY1-0k-SG0"/>
                             <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="vkP-ax-WCf" secondAttribute="trailing" constant="16" id="KnQ-DO-4ct"/>
                             <constraint firstItem="vkP-ax-WCf" firstAttribute="top" secondItem="uze-u2-2D3" secondAttribute="bottom" constant="8" id="OGP-ME-aZj"/>
-                            <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="bLR-Wd-EK3" secondAttribute="trailing" constant="16" id="Owr-fO-RFj"/>
-                            <constraint firstItem="Mkz-DJ-IsC" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" constant="16" id="PrA-cC-Foq"/>
                             <constraint firstItem="uze-u2-2D3" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" constant="16" id="S6e-hw-DYE"/>
-                            <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="mNy-93-kN6" secondAttribute="trailing" constant="16" id="S91-mR-BfI"/>
-                            <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="Xvj-sX-U8Z" secondAttribute="trailing" id="UKU-tj-gvh"/>
-                            <constraint firstItem="mNy-93-kN6" firstAttribute="top" secondItem="Mkz-DJ-IsC" secondAttribute="bottom" constant="8" id="UUy-qQ-nyc"/>
+                            <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="NkC-iA-zVQ" secondAttribute="trailing" constant="131" id="SNE-Bk-g3z"/>
+                            <constraint firstItem="Mkz-DJ-IsC" firstAttribute="top" secondItem="vwr-w1-wKM" secondAttribute="bottom" constant="60" id="Tqx-4c-pAk"/>
                             <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="uze-u2-2D3" secondAttribute="trailing" constant="16" id="YQL-TX-Hi9"/>
-                            <constraint firstItem="NeP-kF-5TP" firstAttribute="top" secondItem="mNy-93-kN6" secondAttribute="bottom" constant="8" id="Zab-ud-32e"/>
-                            <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="7RM-kf-d74" secondAttribute="trailing" constant="140" id="dEE-Vm-C32"/>
-                            <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="Mkz-DJ-IsC" secondAttribute="trailing" constant="16" id="fVu-pG-g3n"/>
                             <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="n2d-Hb-nyl" secondAttribute="trailing" constant="110" id="fpL-yn-5gk"/>
                             <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="vwr-w1-wKM" secondAttribute="trailing" constant="16" id="ghf-Va-jqe"/>
+                            <constraint firstItem="Mkz-DJ-IsC" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" constant="10" id="hu8-qW-iNc"/>
                             <constraint firstItem="n2d-Hb-nyl" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" constant="110" id="i1c-DU-DKI"/>
-                            <constraint firstItem="NkC-iA-zVQ" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" constant="161" id="ifn-mB-jqE"/>
-                            <constraint firstItem="bLR-Wd-EK3" firstAttribute="top" secondItem="NeP-kF-5TP" secondAttribute="bottom" constant="8" id="j3O-Uy-RP4"/>
-                            <constraint firstItem="Jkr-26-SWS" firstAttribute="bottom" secondItem="Xvj-sX-U8Z" secondAttribute="bottom" id="kbX-6b-mxE"/>
-                            <constraint firstItem="Xvj-sX-U8Z" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" id="p8K-GC-LXk"/>
-                            <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="NkC-iA-zVQ" secondAttribute="trailing" constant="154" id="pch-tk-W11"/>
-                            <constraint firstItem="NeP-kF-5TP" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" constant="16" id="pox-qQ-vIj"/>
                             <constraint firstItem="vwr-w1-wKM" firstAttribute="top" secondItem="vkP-ax-WCf" secondAttribute="bottom" constant="8" id="siP-57-Cak"/>
->>>>>>> UIDESIGN
-                            <constraint firstItem="Xvj-sX-U8Z" firstAttribute="top" secondItem="DRZ-ym-QbC" secondAttribute="top" id="yYN-qs-9fV"/>
                         </constraints>
                     </view>
-<<<<<<< HEAD
+                    <navigationItem key="navigationItem" id="dB3-ZK-iGw"/>
                     <connections>
                         <outlet property="categoryLabel" destination="n2d-Hb-nyl" id="Bg1-7R-Q0q"/>
-                        <outlet property="chatLabel" destination="7RM-kf-d74" id="eYJ-kk-N6q"/>
-                        <outlet property="guessesLabel" destination="a2U-Us-3Ri" id="lmf-c9-yLi"/>
-                        <segue destination="o2a-Gg-Wfb" kind="unwind" identifier="resetGame" unwindAction="resetGameUnwindWithSegue:" id="KbP-WY-rW5"/>
-=======
-                    <navigationItem key="navigationItem" title="RESULTS" id="dB3-ZK-iGw"/>
-                    <connections>
-                        <outlet property="categoryLabel" destination="n2d-Hb-nyl" id="Bg1-7R-Q0q"/>
-                        <outlet property="chatLabel" destination="7RM-kf-d74" id="eYJ-kk-N6q"/>
->>>>>>> UIDESIGN
+                        <outlet property="chatLabel" destination="Mkz-DJ-IsC" id="CDs-oD-rC7"/>
+                        <outlet property="team1Label" destination="uze-u2-2D3" id="mm1-37-FWx"/>
+                        <outlet property="team2Label" destination="vkP-ax-WCf" id="bXy-3U-Xrw"/>
+                        <outlet property="team3Label" destination="vwr-w1-wKM" id="oiJ-BB-vnZ"/>
+                        <segue destination="o2a-Gg-Wfb" kind="unwind" identifier="resetGame" unwindAction="resetGameUnwindWithSegue:" id="PMo-Ja-IQ4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uzd-WZ-aRo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
