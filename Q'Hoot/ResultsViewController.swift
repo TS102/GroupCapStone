@@ -55,6 +55,7 @@ class ResultsViewController: UIViewController {
         case 3: prompt = "you are game master for a trivia like game where teams are going to give you words that relate to a certain category. you'll give me a score based on how many words are related to the category provided and give them more points for how closely related the words are to that category. the category is \(category), and the words that team one has given are \(team1Guesses), and this is team twos words \(team2Guesses), team threes words are \(team3Guesses), respond with only the scores for each team."
         default: print("error")
         }
+
         let data = ["model": "text-davinci-003",
                     "prompt": "\(prompt)",
                     "max_tokens": 25,
