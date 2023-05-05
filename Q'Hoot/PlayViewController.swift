@@ -19,8 +19,8 @@ class PlayViewController: UIViewController {
     }
     
     
-    @IBAction func resetGameUnwind(segue: UIStoryboardSegue) {
-        
+    @IBAction func unwind(_ unwindSegue: UIStoryboardSegue) {
+    
     }
 
     /*

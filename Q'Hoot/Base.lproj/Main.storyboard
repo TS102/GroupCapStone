@@ -525,7 +525,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NkC-iA-zVQ">
-                                <rect key="frame" x="131" y="686.66666666666663" width="128" height="51.666666666666629"/>
+                                <rect key="frame" x="131" y="634" width="128" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Restart Game"/>
                                 <connections>
@@ -537,17 +537,17 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="n2d-Hb-nyl" firstAttribute="top" secondItem="Jkr-26-SWS" secondAttribute="top" constant="40" id="0eF-Cp-u31"/>
-                            <constraint firstItem="NkC-iA-zVQ" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" constant="131" id="0xy-AE-A0l"/>
                             <constraint firstItem="vkP-ax-WCf" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" constant="16" id="45V-nt-yne"/>
-                            <constraint firstItem="NkC-iA-zVQ" firstAttribute="top" secondItem="Mkz-DJ-IsC" secondAttribute="bottom" constant="144" id="5Mp-ob-Xjc"/>
-                            <constraint firstItem="Jkr-26-SWS" firstAttribute="bottom" secondItem="NkC-iA-zVQ" secondAttribute="bottom" constant="48.670000000000002" id="7P8-Jb-BaD"/>
                             <constraint firstItem="uze-u2-2D3" firstAttribute="top" secondItem="n2d-Hb-nyl" secondAttribute="bottom" constant="86" id="9qk-Ig-rT5"/>
+                            <constraint firstItem="NkC-iA-zVQ" firstAttribute="top" secondItem="Mkz-DJ-IsC" secondAttribute="bottom" constant="91.329999999999998" id="FbP-Ob-sA9"/>
                             <constraint firstItem="vwr-w1-wKM" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" constant="16" id="IfY-ct-D3j"/>
                             <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="Mkz-DJ-IsC" secondAttribute="trailing" constant="10" id="JY1-0k-SG0"/>
                             <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="vkP-ax-WCf" secondAttribute="trailing" constant="16" id="KnQ-DO-4ct"/>
+                            <constraint firstItem="NkC-iA-zVQ" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" constant="131" id="LIE-ip-uDh"/>
+                            <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="NkC-iA-zVQ" secondAttribute="trailing" constant="131" id="LqW-6X-NX5"/>
                             <constraint firstItem="vkP-ax-WCf" firstAttribute="top" secondItem="uze-u2-2D3" secondAttribute="bottom" constant="8" id="OGP-ME-aZj"/>
+                            <constraint firstItem="Jkr-26-SWS" firstAttribute="bottom" secondItem="NkC-iA-zVQ" secondAttribute="bottom" constant="118.67" id="Olm-8z-07K"/>
                             <constraint firstItem="uze-u2-2D3" firstAttribute="leading" secondItem="Jkr-26-SWS" secondAttribute="leading" constant="16" id="S6e-hw-DYE"/>
-                            <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="NkC-iA-zVQ" secondAttribute="trailing" constant="131" id="SNE-Bk-g3z"/>
                             <constraint firstItem="Mkz-DJ-IsC" firstAttribute="top" secondItem="vwr-w1-wKM" secondAttribute="bottom" constant="60" id="Tqx-4c-pAk"/>
                             <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="uze-u2-2D3" secondAttribute="trailing" constant="16" id="YQL-TX-Hi9"/>
                             <constraint firstItem="Jkr-26-SWS" firstAttribute="trailing" secondItem="n2d-Hb-nyl" secondAttribute="trailing" constant="110" id="fpL-yn-5gk"/>
@@ -564,7 +564,7 @@
                         <outlet property="team1Label" destination="uze-u2-2D3" id="mm1-37-FWx"/>
                         <outlet property="team2Label" destination="vkP-ax-WCf" id="bXy-3U-Xrw"/>
                         <outlet property="team3Label" destination="vwr-w1-wKM" id="oiJ-BB-vnZ"/>
-                        <segue destination="o2a-Gg-Wfb" kind="unwind" identifier="resetGame" unwindAction="resetGameUnwindWithSegue:" id="PMo-Ja-IQ4"/>
+                        <segue destination="o2a-Gg-Wfb" kind="unwind" identifier="ResetGame" unwindAction="unwind:" id="y4l-fq-579"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uzd-WZ-aRo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

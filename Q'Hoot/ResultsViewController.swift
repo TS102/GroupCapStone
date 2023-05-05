@@ -130,7 +130,7 @@ class ResultsViewController: UIViewController {
     
  
     @IBAction func buttonTapped(_ sender: Any) {
-        performSegue(withIdentifier: "resetGame", sender: nil)
+        performSegue(withIdentifier: "ResetGame", sender: nil)
     }
     
     
