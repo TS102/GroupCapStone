@@ -52,8 +52,14 @@ print("\(teamPickerData) \(timeLimitData) \(categoryData)")
        }
 
     func showAlert() {
-        let gamePrompt = UIAlertController(title: "Write as many words that fall into the \(categoryData) category as you can in \(timeLimitData) seconds!", message: nil, preferredStyle: .alert)
-        
+            var gamePrompt = UIAlertController(title: "Write as many words that fall into the \(categoryData) category as you can in \(timeLimitData) seconds!", message: nil, preferredStyle: .alert)
+        if currentTeam == 1 {
+            gamePrompt = UIAlertController(title: "First team write as many words that fall into the \(categoryData) category as you can in \(timeLimitData) seconds!", message: nil, preferredStyle: .alert)
+        } else if currentTeam == 2 {
+            gamePrompt = UIAlertController(title: "Second team write as many words that fall into the \(categoryData) category as you can in \(timeLimitData) seconds!", message: nil, preferredStyle: .alert)
+        } else if currentTeam == 3 {
+            gamePrompt = UIAlertController(title: "Third team write as many words that fall into the \(categoryData) category as you can in \(timeLimitData) seconds!", message: nil, preferredStyle: .alert)
+        }
         let action = UIAlertAction(title: "Go!", style: .default) { (action) in
             self.startTimer()
         }
