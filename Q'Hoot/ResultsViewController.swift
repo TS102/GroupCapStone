@@ -31,7 +31,7 @@ class ResultsViewController: UIViewController {
         self.navigationItem .setHidesBackButton(true, animated: false)
         categoryLabel.text = category
         
-
+        hideLabel()
         team1Label.text = "Team 1:\(team1Guesses)"
         team2Label.text = "Team 2:\(team2Guesses)"
         team3Label.text = "Team 3:\(team3Guesses)"
@@ -43,10 +43,6 @@ class ResultsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-
-    // MARK: implement this later when we get the teams part working
-//    you are a word scanner that will scan an array and give me the number of corrects words from that array based on a category. here is array one: ["red, "blue", "green", "car"], array two: ["red, "blue", "green", "car", "purple", "grey"], array three: ["red, "fish", "green", "car"].  and the category is colors give me the shortest answer possible which should be only numbers.
     
     func apiCall() {
         let url = URL(string: "https://api.openai.com/v1/completions")!
@@ -130,21 +126,22 @@ class ResultsViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    func hideLabel() {
+        switch numberOfTeams {
+        case 1:
+            team2Label.isHidden = true
+            team3Label.isHidden = true
+        case 2:
+            team3Label.isHidden = true
+        default:
+            print("show all three labels")
+        }
+        
+    }
+    
  
     @IBAction func buttonTapped(_ sender: Any) {
         performSegue(withIdentifier: "ResetGame", sender: nil)
     }
     
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
