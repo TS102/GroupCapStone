@@ -112,7 +112,7 @@ class PreGameSettingsViewController:UIViewController, UIPickerViewDelegate, UIPi
             let vc = segue.destination as! GameViewController
                 vc.teamPickerData = teamSelected
                 vc.timeLimitData = timeLimitSelected
-                vc.categoryData = catergorySelected
+        vc.categoryData = catergorySelected.lowercased()
     }
     
    
