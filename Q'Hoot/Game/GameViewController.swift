@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 protocol PreGameSettings {
 func passGameSettrings(teams: Int, timeLimit: Int, Category: String)
@@ -21,13 +22,18 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
     var teamPickerData: String = ""
     var timeLimitData: Int = 5
     var categoryData: String = ""
+    
+    
     // this is where the guesses will go when the user makes them
-
     var team1Guesses: [String] = []
     var team2Guesses: [String] = []
     var team3Guesses: [String] = []
+    
     var seconds: Int = 30
     var userGuesses: [String] = []
+    
+    var backGroundMusic: AVAudioPlayer?
+    
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var promptLabel: UILabel!
@@ -46,6 +52,7 @@ print("\(teamPickerData) \(timeLimitData) \(categoryData)")
         promptLabel.text = "Write as many words that fall into the \(categoryData) category as you can in \(timeLimitData) seconds!"
       
         showAlert()
+        playMusic()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -181,6 +188,23 @@ print("\(teamPickerData) \(timeLimitData) \(categoryData)")
         vc.team2Guesses = team2Guesses
         vc.team3Guesses = team3Guesses
         vc.numberOfTeams = Int(teamPickerData) ?? 1
+    }
+    
+    func playMusic() {
+        guard let url = Bundle.main.url(forResource: "KahootTrap", withExtension: "mp3") else { return }
+        
+//        let path = Bundle.main.path(forResource: "KahootTrap.mp3", ofType: nil)!
+//        let url = URL(fileURLWithPath: path)
+
+        do {
+            backGroundMusic = try AVAudioPlayer(contentsOf: url)
+            backGroundMusic = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            
+            backGroundMusic?.play()
+        } catch {
+            print("could not play music")
+        }
+
     }
     
     /*
