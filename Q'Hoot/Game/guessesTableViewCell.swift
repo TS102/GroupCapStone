@@ -57,4 +57,7 @@ class guessesTableViewCell: UITableViewCell, UITextFieldDelegate {
         delegate?.guessesMade(guess: guesses)
         guessesTextfield.text = ""
     }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guessesTextfield.text = ""
+    }
 }
