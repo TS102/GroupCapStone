@@ -16,11 +16,10 @@ class PreGameSettingsViewController:UIViewController, UIPickerViewDelegate, UIPi
     var catergorySelected: String = "Colors"
     let teamPickerData = ["1", "2", "3"]
     let timeLimitData = [5, 30, 60, 90]
-    let categoryData = ["Colors", "Plants", "Food", "Trees"]
     @IBOutlet weak var numberOfTeamsPicker: UIPickerView!
     @IBOutlet weak var timeLimitPicker: UIPickerView!
     
-    @IBOutlet weak var categoryPicker: UIPickerView!
+    @IBOutlet weak var categoryTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +27,31 @@ class PreGameSettingsViewController:UIViewController, UIPickerViewDelegate, UIPi
         self.numberOfTeamsPicker.delegate = self
         self.timeLimitPicker.dataSource = self
         self.timeLimitPicker.delegate = self
-        self.categoryPicker.dataSource = self
-        self.categoryPicker.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+           NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         // Do any additional setup after loading the view.
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+
+            //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+            //tap.cancelsTouchesInView = false
+
+            view.addGestureRecognizer(tap)
+        
     }
     
-    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
     /*
      // MARK: - Navigation
      
@@ -43,6 +61,11 @@ class PreGameSettingsViewController:UIViewController, UIPickerViewDelegate, UIPi
      // Pass the selected object to the new view controller.
      }
      */
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -53,9 +76,6 @@ class PreGameSettingsViewController:UIViewController, UIPickerViewDelegate, UIPi
         }
         else if pickerView == timeLimitPicker {
             return timeLimitData.count
-        }
-        else if pickerView == categoryPicker{
-            return categoryData.count
         } else {return 0}
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
@@ -69,9 +89,6 @@ class PreGameSettingsViewController:UIViewController, UIPickerViewDelegate, UIPi
         }
         else if pickerView == timeLimitPicker {
             return String(timeLimitData[row])
-        }
-        else if pickerView == categoryPicker{
-            return categoryData[row]
         } else {return nil}
           }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -83,12 +100,10 @@ class PreGameSettingsViewController:UIViewController, UIPickerViewDelegate, UIPi
             timeLimitSelected = timeLimitData[row]
             print(timeLimitSelected)
         }
-        else if pickerView == categoryPicker{
-            catergorySelected = categoryData[row]
-            print(catergorySelected)
-        }
     }
     @IBAction func nextButtonPushed(_ sender: Any) {
+        guard categoryTextField.text != "" else {return}
+        catergorySelected = categoryTextField.text ?? "Colors"
         performSegue(withIdentifier: "startGame", sender: Any?.self)
         
     }
@@ -99,6 +114,7 @@ class PreGameSettingsViewController:UIViewController, UIPickerViewDelegate, UIPi
                 vc.timeLimitData = timeLimitSelected
                 vc.categoryData = catergorySelected
     }
+    
    
 }
 

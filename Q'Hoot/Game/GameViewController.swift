@@ -43,6 +43,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        playMusic()
         tableview.delegate = self
         tableview.dataSource = self
         tableview.reloadData()
@@ -52,8 +53,6 @@ print("\(teamPickerData) \(timeLimitData) \(categoryData)")
         promptLabel.text = "Write as many words that fall into the \(categoryData) category as you can in \(timeLimitData) seconds!"
       
         showAlert()
-        playMusic()
-        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
        }
@@ -79,7 +78,7 @@ print("\(teamPickerData) \(timeLimitData) \(categoryData)")
        @objc func keyboardWillShow(notification: NSNotification) {
            if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
                if self.view.frame.origin.y == 0 {
-                   self.view.frame.origin.y -= keyboardSize.height
+                   self.view.frame.origin.y -= keyboardSize.height - 125
                }
            }
        }
@@ -183,6 +182,7 @@ print("\(teamPickerData) \(timeLimitData) \(categoryData)")
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "Results" else {return}
             let vc = segue.destination as! ResultsViewController
+        backGroundMusic?.stop()
         vc.category = categoryData
         vc.team1Guesses = team1Guesses
         vc.team2Guesses = team2Guesses
@@ -191,21 +191,32 @@ print("\(teamPickerData) \(timeLimitData) \(categoryData)")
     }
     
     func playMusic() {
-        guard let url = Bundle.main.url(forResource: "KahootTrap", withExtension: "mp3") else { return }
-        
-//        let path = Bundle.main.path(forResource: "KahootTrap.mp3", ofType: nil)!
-//        let url = URL(fileURLWithPath: path)
-
-        do {
-            backGroundMusic = try AVAudioPlayer(contentsOf: url)
-            backGroundMusic = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-            
-            backGroundMusic?.play()
-        } catch {
-            print("could not play music")
+        if let asset = NSDataAsset(name: "KahootTrap") {
+            do {
+                try AVAudioSession.sharedInstance().setMode(.default)
+                try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+                
+//                guard let url = url else {
+//                    return
+//                }
+//
+                backGroundMusic = try AVAudioPlayer(data: asset.data, fileTypeHint: "mp3")
+                
+                
+                guard let backGroundMusic = backGroundMusic else {
+                    return
+                }
+                
+                backGroundMusic.play()
+            } catch {
+                // couldn't load file
+            }
         }
 
     }
+    
+    
+    
     
     /*
     // MARK: - Navigation
