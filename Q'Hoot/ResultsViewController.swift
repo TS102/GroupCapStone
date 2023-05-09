@@ -47,7 +47,7 @@ class ResultsViewController: UIViewController {
     func apiCall() {
         let url = URL(string: "https://api.openai.com/v1/completions")!
         // MARK: delete api key before pushing
-        let apiKey = ""
+        let apiKey = "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"
         let headers = ["Content-Type": "application/json",
                        "Authorization": "Bearer " + apiKey]
         switch numberOfTeams {

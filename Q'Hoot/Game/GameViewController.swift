@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 protocol PreGameSettings {
 func passGameSettrings(teams: Int, timeLimit: Int, Category: String)
@@ -21,13 +22,18 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
     var teamPickerData: String = ""
     var timeLimitData: Int = 10
     var categoryData: String = ""
+    
+    
     // this is where the guesses will go when the user makes them
-
     var team1Guesses: [String] = []
     var team2Guesses: [String] = []
     var team3Guesses: [String] = []
     var seconds: Int = 10
+
     var userGuesses: [String] = []
+    
+    var backGroundMusic: AVAudioPlayer?
+    
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var promptLabel: UILabel!
@@ -37,6 +43,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        playMusic()
         tableview.delegate = self
         tableview.dataSource = self
         tableview.reloadData()
@@ -46,7 +53,6 @@ print("\(teamPickerData) \(timeLimitData) \(categoryData)")
         promptLabel.text = "Write as many words that fall into the \(categoryData) category as you can in \(timeLimitData) seconds!"
       
         showAlert()
-        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
        }
@@ -176,12 +182,41 @@ print("\(teamPickerData) \(timeLimitData) \(categoryData)")
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "Results" else {return}
             let vc = segue.destination as! ResultsViewController
+        backGroundMusic?.stop()
         vc.category = categoryData
         vc.team1Guesses = team1Guesses
         vc.team2Guesses = team2Guesses
         vc.team3Guesses = team3Guesses
         vc.numberOfTeams = Int(teamPickerData) ?? 1
     }
+    
+    func playMusic() {
+        if let asset = NSDataAsset(name: "KahootTrap") {
+            do {
+                try AVAudioSession.sharedInstance().setMode(.default)
+                try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+                
+//                guard let url = url else {
+//                    return
+//                }
+//
+                backGroundMusic = try AVAudioPlayer(data: asset.data, fileTypeHint: "mp3")
+                
+                
+                guard let backGroundMusic = backGroundMusic else {
+                    return
+                }
+                
+                backGroundMusic.play()
+            } catch {
+                // couldn't load file
+            }
+        }
+
+    }
+    
+    
+    
     
     /*
     // MARK: - Navigation
