@@ -32,9 +32,10 @@ class ResultsViewController: UIViewController {
         categoryLabel.text = category
         
         hideLabel()
-        team1Label.text = "Team 1:\(team1Guesses)"
-        team2Label.text = "Team 2:\(team2Guesses)"
-        team3Label.text = "Team 3:\(team3Guesses)"
+    
+        team1Label.text = "Team 1 Guesses: \(team1Guesses.joined(separator: ", "))"
+        team2Label.text = "Team 2 Guesses: \(team2Guesses.joined(separator: ", "))"
+        team3Label.text = "Team 3 Guesses: \(team3Guesses.joined(separator: ", "))"
         
         
         print(team1Guesses, team2Guesses, team3Guesses)
@@ -47,7 +48,7 @@ class ResultsViewController: UIViewController {
     func apiCall() {
         let url = URL(string: "https://api.openai.com/v1/completions")!
         // MARK: delete api key before pushing
-        let apiKey = "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"
+        let apiKey = ""
         let headers = ["Content-Type": "application/json",
                        "Authorization": "Bearer " + apiKey]
         switch numberOfTeams {
