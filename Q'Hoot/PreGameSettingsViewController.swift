@@ -112,9 +112,9 @@ class PreGameSettingsViewController:UIViewController, UIPickerViewDelegate, UIPi
     }
     @IBAction func nextButtonPushed(_ sender: Any) {
 //        guard categoryTextField.text != "" else {return}
-        if categoryTextField.state.isEmpty {
+        if categoryTextField.text == "" {
             textFieldEmpty()
-        } else if !categoryTextField.state.isEmpty {
+        } else {
             catergorySelected = categoryTextField.text ?? "Colors"
             performSegue(withIdentifier: "startGame", sender: Any?.self)
         }
