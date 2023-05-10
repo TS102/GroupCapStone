@@ -23,6 +23,7 @@ class PreGameSettingsViewController:UIViewController, UIPickerViewDelegate, UIPi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        categoryTextField.layer.borderWidth = 1.0
         self.numberOfTeamsPicker.dataSource = self
         self.numberOfTeamsPicker.delegate = self
         self.timeLimitPicker.dataSource = self
@@ -40,13 +41,14 @@ class PreGameSettingsViewController:UIViewController, UIPickerViewDelegate, UIPi
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
+        let white = UIColor.white
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
                 self.view.frame.origin.y -= keyboardSize.height
+                categoryTextField.layer.borderColor = white.cgColor
             }
         }
     }
-
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
@@ -80,7 +82,6 @@ class PreGameSettingsViewController:UIViewController, UIPickerViewDelegate, UIPi
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
            {
-               
                pickerView.setValue(UIColor.systemGray, forKeyPath: "textColor")
                
                
@@ -101,10 +102,22 @@ class PreGameSettingsViewController:UIViewController, UIPickerViewDelegate, UIPi
             print(timeLimitSelected)
         }
     }
+    func textFieldEmpty() {
+        let red = UIColor.red
+        UIView.animate(withDuration: 0.1) {
+            self.categoryTextField.transform = CGAffineTransform(translationX: 10, y: 4.5)
+            self.categoryTextField.layer.borderColor = red.cgColor
+        }
+        self.categoryTextField.transform = .identity
+    }
     @IBAction func nextButtonPushed(_ sender: Any) {
-        guard categoryTextField.text != "" else {return}
-        catergorySelected = categoryTextField.text ?? "Colors"
-        performSegue(withIdentifier: "startGame", sender: Any?.self)
+//        guard categoryTextField.text != "" else {return}
+        if categoryTextField.state.isEmpty {
+            textFieldEmpty()
+        } else if !categoryTextField.state.isEmpty {
+            catergorySelected = categoryTextField.text ?? "Colors"
+            performSegue(withIdentifier: "startGame", sender: Any?.self)
+        }
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
