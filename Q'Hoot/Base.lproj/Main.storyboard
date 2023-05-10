@@ -150,7 +150,7 @@
             <objects>
                 <viewController id="nip-Gr-aPP" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XfC-J5-Fr2">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4qv-O6-e9o">
@@ -177,10 +177,11 @@
                         <viewLayoutGuide key="safeArea" id="v1q-H4-nel"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="q4X-mC-wEY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ced-qL-e9o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1248" y="747"/>
+            <point key="canvasLocation" x="2054" y="-775"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sIJ-Zm-alU">
@@ -197,7 +198,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IaA-QU-kwu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1980" y="-572"/>
+            <point key="canvasLocation" x="2054" y="-84"/>
         </scene>
         <!--GAME-->
         <scene sceneID="kdS-nv-wR1">
@@ -223,14 +224,24 @@
                                     <segue destination="hrw-3o-Dc3" kind="show" identifier="playGame" id="vlv-Ej-3C2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iIf-ol-kwC">
+                                <rect key="frame" x="298" y="47" width="77" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="RULES"/>
+                                <connections>
+                                    <segue destination="nip-Gr-aPP" kind="presentation" id="1Ts-jb-ogc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ut8-mL-vuK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Ut8-mL-vuK" firstAttribute="trailing" secondItem="iIf-ol-kwC" secondAttribute="trailing" constant="15" id="8fP-kX-2wy"/>
                             <constraint firstItem="fuq-nb-Lb8" firstAttribute="leading" secondItem="Ut8-mL-vuK" secondAttribute="leading" constant="94" id="B7d-0c-WwF"/>
                             <constraint firstItem="tH2-YH-ml5" firstAttribute="top" secondItem="Bub-TY-lcm" secondAttribute="top" id="DWZ-2l-MsD"/>
                             <constraint firstItem="tH2-YH-ml5" firstAttribute="trailing" secondItem="Ut8-mL-vuK" secondAttribute="trailing" id="T4J-h3-OGv"/>
                             <constraint firstItem="Ut8-mL-vuK" firstAttribute="bottom" secondItem="fuq-nb-Lb8" secondAttribute="bottom" constant="302" id="XC2-pB-cYZ"/>
+                            <constraint firstItem="iIf-ol-kwC" firstAttribute="top" secondItem="Ut8-mL-vuK" secondAttribute="top" id="gh6-it-VjU"/>
                             <constraint firstItem="tH2-YH-ml5" firstAttribute="leading" secondItem="Ut8-mL-vuK" secondAttribute="leading" id="ooG-XX-TA0"/>
                             <constraint firstItem="Ut8-mL-vuK" firstAttribute="trailing" secondItem="fuq-nb-Lb8" secondAttribute="trailing" constant="93" id="xtz-cW-WIQ"/>
                         </constraints>
@@ -340,7 +351,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gA6-UT-z4d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2721.5384615384614" y="-572.2748815165877"/>
+            <point key="canvasLocation" x="2832" y="-572"/>
         </scene>
         <!--GAME-->
         <scene sceneID="rv7-f7-ogU">
@@ -499,7 +510,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6U-r6-zBG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3453.8461538461538" y="-572.2748815165877"/>
+            <point key="canvasLocation" x="3588" y="-572"/>
         </scene>
         <!--Results View Controller-->
         <scene sceneID="44R-Eh-bdE">
@@ -594,7 +605,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uzd-WZ-aRo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="o2a-Gg-Wfb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4173.8461538461534" y="-572.2748815165877"/>
+            <point key="canvasLocation" x="4360" y="-572"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="bZe-to-EXs">
