@@ -22,7 +22,6 @@ class guessesTableViewCell: UITableViewCell, UITextFieldDelegate {
         guessesTextfield.delegate = self
        // guessesTextfield.addTarget(self, action: #selector(enterPressed), for: .editingDidEndOnExit)
       //  guessesTextfield.addTarget(self, action: #selector(enterPressed), for: .primaryActionTriggered)
-        guessesTextfield.placeholder = "Enter guess"
     }
     
 
