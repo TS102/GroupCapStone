@@ -8,6 +8,7 @@
 import UIKit
 
 class ResultsViewController: UIViewController {
+    
     var numberOfTeams: Int = 1
     var category = ""
     var timer: Timer?
@@ -25,18 +26,15 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var team2Label: UILabel!
     @IBOutlet weak var team3Label: UILabel!
     @IBOutlet weak var chatLabel: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem .setHidesBackButton(true, animated: false)
         categoryLabel.text = category
         
         hideLabel()
-    
         team1Label.text = "Team 1 Guesses: \(team1Guesses.joined(separator: ", "))"
         team2Label.text = "Team 2 Guesses: \(team2Guesses.joined(separator: ", "))"
         team3Label.text = "Team 3 Guesses: \(team3Guesses.joined(separator: ", "))"
-        
         
         print(team1Guesses, team2Guesses, team3Guesses)
         showResultsAlert()
@@ -97,7 +95,7 @@ class ResultsViewController: UIViewController {
     }
     
     func showResultsAlert() {
-        let image = UIImage(named: "QHOOT LOGO")
+        let image = UIImage(named: "yellowCaution")
         let alert = UIAlertController(title: "Good Work", message: nil, preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Get results", style: .default) { (action) in

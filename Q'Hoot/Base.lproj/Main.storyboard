@@ -166,22 +166,42 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rules are simple, type has many words that you can think of that fall into a specifc categroy in a certain amount of time" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fs-w7-WyE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rules are simple, type has many words that you can think of that fall into a specifc categroy in a certain amount of time " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fs-w7-WyE">
                                 <rect key="frame" x="39" y="188" width="312" height="154"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We are using chatgpt for scoring so the score may not be correct everytime." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEY-tf-s1U">
+                                <rect key="frame" x="39" y="616.33333333333337" width="312" height="40.666666666666629"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notice!!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJD-Q3-WOP">
+                                <rect key="frame" x="140" y="545" width="111" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="v1q-H4-nel"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="v1q-H4-nel" firstAttribute="bottom" secondItem="ZEY-tf-s1U" secondAttribute="bottom" constant="130" id="29w-Zf-qcJ"/>
+                            <constraint firstItem="ZEY-tf-s1U" firstAttribute="leading" secondItem="v1q-H4-nel" secondAttribute="leading" constant="39" id="3Iq-QM-Mp6"/>
+                            <constraint firstItem="MJD-Q3-WOP" firstAttribute="leading" secondItem="v1q-H4-nel" secondAttribute="leading" constant="140" id="ROh-lZ-qQv"/>
+                            <constraint firstItem="ZEY-tf-s1U" firstAttribute="top" secondItem="MJD-Q3-WOP" secondAttribute="bottom" constant="35.329999999999998" id="TQC-Rs-zwr"/>
+                            <constraint firstItem="v1q-H4-nel" firstAttribute="trailing" secondItem="ZEY-tf-s1U" secondAttribute="trailing" constant="39" id="bHb-9O-Fcn"/>
+                            <constraint firstItem="v1q-H4-nel" firstAttribute="trailing" secondItem="MJD-Q3-WOP" secondAttribute="trailing" constant="139" id="j4r-0F-ynI"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="q4X-mC-wEY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ced-qL-e9o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2054" y="-775"/>
+            <point key="canvasLocation" x="2053.8461538461538" y="-775.59241706161129"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sIJ-Zm-alU">
@@ -648,6 +668,9 @@
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
