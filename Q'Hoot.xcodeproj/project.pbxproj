@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C17F2BA2A1280C600739CC2 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C17F2B92A1280C600739CC2 /* LaunchScreenViewController.swift */; };
+		2C17F2BC2A1280E300739CC2 /* BounceAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C17F2BB2A1280E300739CC2 /* BounceAnimationView.swift */; };
 		2C995CEA29F1818900E01E44 /* PreGameSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C995CE929F1818900E01E44 /* PreGameSettingsViewController.swift */; };
 		2C995CEC29F2D2F000E01E44 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C995CEB29F2D2EF00E01E44 /* GameViewController.swift */; };
 		3E952A8A29F811F6009F71A3 /* guessesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E952A8929F811F6009F71A3 /* guessesTableViewCell.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C17F2B92A1280C600739CC2 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		2C17F2BB2A1280E300739CC2 /* BounceAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceAnimationView.swift; sourceTree = "<group>"; };
 		2C995CE929F1818900E01E44 /* PreGameSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreGameSettingsViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		2C995CEB29F2D2EF00E01E44 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		3E952A8929F811F6009F71A3 /* guessesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guessesTableViewCell.swift; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 				3EB5DF6529F6D2E300854678 /* ResultsViewController.swift */,
 				3E952A8B29F8137C009F71A3 /* Game */,
 				3EB492D929ED9617008A1398 /* Main.storyboard */,
+				2C17F2B92A1280C600739CC2 /* LaunchScreenViewController.swift */,
+				2C17F2BB2A1280E300739CC2 /* BounceAnimationView.swift */,
 				3EB492DC29ED9618008A1398 /* Assets.xcassets */,
 				3EB492DE29ED9618008A1398 /* LaunchScreen.storyboard */,
 				3EB492E129ED9618008A1398 /* Info.plist */,
@@ -181,6 +187,7 @@
 				3E952A8D29F81753009F71A3 /* UserGuessesTableViewCell.swift in Sources */,
 				2C995CEC29F2D2F000E01E44 /* GameViewController.swift in Sources */,
 				3EB492D829ED9617008A1398 /* ViewController.swift in Sources */,
+				2C17F2BC2A1280E300739CC2 /* BounceAnimationView.swift in Sources */,
 				C2C6F61829EDA89E00A985C3 /* PlayViewController.swift in Sources */,
 				3ECF0E792A0E85E900C82C6F /* GameData.swift in Sources */,
 				3EB492D429ED9617008A1398 /* AppDelegate.swift in Sources */,
@@ -188,6 +195,7 @@
 				3EB492D629ED9617008A1398 /* SceneDelegate.swift in Sources */,
 				3E952A8A29F811F6009F71A3 /* guessesTableViewCell.swift in Sources */,
 				C2C6F61629EDA87000A985C3 /* SettingsViewController.swift in Sources */,
+				2C17F2BA2A1280C600739CC2 /* LaunchScreenViewController.swift in Sources */,
 				3EB5DF6629F6D2E300854678 /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
