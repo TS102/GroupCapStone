@@ -8,9 +8,7 @@
 import UIKit
 
 class PreGameSettingsViewController:UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    func passGameSettrings(teams: Int, timeLimit: Int, Category: String) {
-        //
-    }
+
     var teamSelected: String = "1"
     var timeLimitSelected: Int = 10
     var catergorySelected: String = "Colors"

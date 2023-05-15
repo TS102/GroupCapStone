@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol ResultsViewControllerDelegate {
+    func sendData(team1: [String], team2: [String], team3: [String], numberOfTeams : Int, ishidden: Bool?)
+}
+
 class ResultsViewController: UIViewController {
+    
+    var delegate: ResultsViewControllerDelegate?
     
     var numberOfTeams: Int = 1
     var category = ""
@@ -18,14 +24,16 @@ class ResultsViewController: UIViewController {
     var team2Guesses: [String] = []
     var team3Guesses: [String] = []
     
-//    // put all the teams scores in this array
-//    var teamScores: [Int] = []
+    
+    let defaults = UserDefaults.standard
+
     
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var team1Label: UILabel!
     @IBOutlet weak var team2Label: UILabel!
     @IBOutlet weak var team3Label: UILabel!
     @IBOutlet weak var chatLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem .setHidesBackButton(true, animated: false)
@@ -95,7 +103,7 @@ class ResultsViewController: UIViewController {
     }
     
     func showResultsAlert() {
-        let image = UIImage(named: "yellowCaution")
+        let image = UIImage(named: "whiteOwl")
         let alert = UIAlertController(title: "Good Work", message: nil, preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Get results", style: .default) { (action) in
@@ -141,6 +149,6 @@ class ResultsViewController: UIViewController {
  
     @IBAction func buttonTapped(_ sender: Any) {
         performSegue(withIdentifier: "ResetGame", sender: nil)
+        delegate?.sendData(team1: team1Guesses, team2: team2Guesses, team3: team3Guesses, numberOfTeams: numberOfTeams, ishidden: nil)
     }
-    
 }

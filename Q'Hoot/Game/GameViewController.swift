@@ -8,10 +8,6 @@
 import UIKit
 import AVFoundation
 
-protocol PreGameSettings {
-func passGameSettrings(teams: Int, timeLimit: Int, Category: String)
-}
-
 protocol GuessesTableViewCellDelegate {
     func guessesMade(guess: String)
 }
@@ -230,9 +226,9 @@ print("\(teamPickerData) \(timeLimitData) \(categoryData)")
     
 
 }
-//
-//import SwiftUI
-//
+
+import SwiftUI
+
 //struct GameViewControllerRepresentable: UIViewControllerRepresentable {
 //    func makeUIViewController(context: Context) -> GameViewController {
 //        UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "GameViewController") as! GameViewController

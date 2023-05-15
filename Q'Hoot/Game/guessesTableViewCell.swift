@@ -44,11 +44,6 @@ class guessesTableViewCell: UITableViewCell, UITextFieldDelegate {
    
          return false
       }
-//    func guessesMade(tableView: UITableView) {
-//        guard let guesses = guessesTextfield.text else { return }
-//        userguesses.append(guesses)
-//        tableView.reloadData()
-//    }
     
 
     @IBAction func buttonTapped(_ sender: UITableView) {
