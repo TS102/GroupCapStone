@@ -54,13 +54,13 @@ class PlayViewController: UIViewController, ResultsViewControllerDelegate {
     }
     
     
-    func sendData(team1: [String], team2: [String], team3: [String], numberOfTeams: Int, ishidden: Bool?) {
+    func sendData(team1: [String], team2: [String], team3: [String], numberOfTeams: Int) {
 //        team1Guesses = team1
 //        team3Guesses = team2
 //        team3Guesses = team3
         amountOfTeams = numberOfTeams
         hideLabels()
-        previousGuesses[0].text = team1.joined(separator: ", ")
+        previousGuesses[0].text = " team: \(team1.joined(separator: ", "))"
         previousGuesses[1].text = team2.joined(separator: ", ")
         previousGuesses[2].text = team3.joined(separator: ", ")
         

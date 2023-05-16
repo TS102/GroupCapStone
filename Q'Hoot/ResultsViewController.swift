@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ResultsViewControllerDelegate {
-    func sendData(team1: [String], team2: [String], team3: [String], numberOfTeams : Int, ishidden: Bool?)
+    func sendData(team1: [String], team2: [String], team3: [String], numberOfTeams : Int)
 }
 
 class ResultsViewController: UIViewController {
@@ -37,7 +37,7 @@ class ResultsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem .setHidesBackButton(true, animated: false)
-        categoryLabel.text = category
+        categoryLabel.text = category.capitalized
         
         hideLabel()
         team1Label.text = "Team 1 Guesses: \(team1Guesses.joined(separator: ", "))"
@@ -66,8 +66,8 @@ class ResultsViewController: UIViewController {
 
         let data = ["model": "text-davinci-003",
                     "prompt": "\(prompt)",
-                    "max_tokens": 25,
-                    "temperature": 0.2
+                    "max_tokens": 75,
+                    "temperature": 0.1
         ] as [String : Any]
         let jsonData = try! JSONSerialization.data(withJSONObject: data, options: [])
         var request = URLRequest(url: url)
@@ -149,6 +149,6 @@ class ResultsViewController: UIViewController {
  
     @IBAction func buttonTapped(_ sender: Any) {
         performSegue(withIdentifier: "ResetGame", sender: nil)
-        delegate?.sendData(team1: team1Guesses, team2: team2Guesses, team3: team3Guesses, numberOfTeams: numberOfTeams, ishidden: nil)
+        delegate?.sendData(team1: team1Guesses, team2: team2Guesses, team3: team3Guesses, numberOfTeams: numberOfTeams)
     }
 }
