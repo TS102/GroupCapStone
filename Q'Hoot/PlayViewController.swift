@@ -10,8 +10,12 @@ import UIKit
 class PlayViewController: UIViewController, ResultsViewControllerDelegate {
     
     @IBOutlet weak var previousGameLabel: UILabel!
+    @IBOutlet weak var chatLabel: UILabel!
+    
+    
     
     @IBOutlet var previousGuesses: [UILabel]!
+    
     
     var amountOfTeams = 0
     var team1Guesses: [String] = []
@@ -27,44 +31,20 @@ class PlayViewController: UIViewController, ResultsViewControllerDelegate {
     }
     
     func hideLabels() {
-        switch amountOfTeams {
-        case 0:
+        if amountOfTeams == 0 {
             previousGameLabel.isHidden = true
-            previousGuesses[0].isHidden = true
-            previousGuesses[1].isHidden = true
-            previousGuesses[2].isHidden = true
-        case 1:
+            chatLabel.isHidden = true
+        } else {
             previousGameLabel.isHidden = false
-            previousGuesses[0].isHidden = false
-            previousGuesses[1].isHidden = true
-            previousGuesses[2].isHidden = true
-        case 2:
-            previousGameLabel.isHidden = false
-            previousGuesses[0].isHidden = false
-            previousGuesses[1].isHidden = false
-            previousGuesses[2].isHidden = true
-        case 3:
-            previousGameLabel.isHidden = false
-            previousGuesses[0].isHidden = false
-            previousGuesses[1].isHidden = false
-            previousGuesses[2].isHidden = false
-        default:
-            print("should never hit")
+            chatLabel.isHidden = false
         }
     }
     
     
-    func sendData(team1: [String], team2: [String], team3: [String], numberOfTeams: Int) {
-//        team1Guesses = team1
-//        team3Guesses = team2
-//        team3Guesses = team3
+    func sendData(team1: [String], team2: [String], team3: [String], numberOfTeams: Int, chatRespone: String) {
         amountOfTeams = numberOfTeams
         hideLabels()
-        previousGuesses[0].text = " team: \(team1.joined(separator: ", "))"
-        previousGuesses[1].text = team2.joined(separator: ", ")
-        previousGuesses[2].text = team3.joined(separator: ", ")
-        
-        print(amountOfTeams)
+        chatLabel.text = chatRespone
     }
     
     @IBAction func unwind(_ unwindSegue: UIStoryboardSegue) {

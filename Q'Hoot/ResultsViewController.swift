@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ResultsViewControllerDelegate {
-    func sendData(team1: [String], team2: [String], team3: [String], numberOfTeams : Int)
+    func sendData(team1: [String], team2: [String], team3: [String], numberOfTeams : Int, chatRespone: String)
 }
 
 class ResultsViewController: UIViewController {
@@ -54,7 +54,7 @@ class ResultsViewController: UIViewController {
     func apiCall() {
         let url = URL(string: "https://api.openai.com/v1/completions")!
         // MARK: delete api key before pushing
-        let apiKey = ""
+        let apiKey = "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"
         let headers = ["Content-Type": "application/json",
                        "Authorization": "Bearer " + apiKey]
         switch numberOfTeams {
@@ -148,7 +148,8 @@ class ResultsViewController: UIViewController {
     
  
     @IBAction func buttonTapped(_ sender: Any) {
+        guard let chat = chatLabel.text else { return }
         performSegue(withIdentifier: "ResetGame", sender: nil)
-        delegate?.sendData(team1: team1Guesses, team2: team2Guesses, team3: team3Guesses, numberOfTeams: numberOfTeams)
+        delegate?.sendData(team1: team1Guesses, team2: team2Guesses, team3: team3Guesses, numberOfTeams: numberOfTeams, chatRespone: chat)
     }
 }
