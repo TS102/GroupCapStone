@@ -187,7 +187,7 @@ print("\(teamPickerData) \(timeLimitData) \(categoryData)")
     }
     
     func playMusic() {
-        if let asset = NSDataAsset(name: "Kahoot") {
+        if let asset = NSDataAsset(name: "KahootTrap") {
             do {
                 try AVAudioSession.sharedInstance().setMode(.default)
                 try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
